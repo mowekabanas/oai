@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="roboto">
+<head>
+    <meta charset="utf-8"/>
+    <title>Oai Telecom</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <script src="dist/js/villa.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="dist/css/villa.min.css"/>
+    <link rel="stylesheet" href="dist/css/mowe.min.css"/>
+    <link rel="stylesheet" href="dist/css/icon.css"/>
+    <link rel="stylesheet" href="css/oai.css"/>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
+    <script src="dist/js/html5shiv.js"></script>
+    <script src="dist/js/html5shiv-printshiv.js"></script>
+    <script src="dist/js/classList.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+        .form {
+            padding: 1.5em;
+            width: 100%;
+        }
+
+        .form-wrapper {
+            width: 50%;
+        }
+
+        .name-wrapper, .email-wrapper, .message-wrapper {
+
+            padding: 1em 0;
+
+        }
+
+
+        .form ::-webkit-input-placeholder {
+            color: #607d8b;
+        }
+
+        .form :-moz-placeholder {
+            color: #607d8b;
+        }
+
+        .form ::-moz-placeholder {
+            color: #607d8b;
+        }
+
+        .form :focus::-webkit-input-placeholder {
+            color: #b0bec5;
+        }
+
+        .form :focus:-moz-placeholder {
+            color: #b0bec5;
+        }
+
+        .form :focus::-moz-placeholder {
+            color: #b0bec5;
+        }
+
+        .personal-info input,
+        .personal-info label,
+        .form textarea {
+            color: #4e342e;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .personal-info input,
+        .form textarea {
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: #e0e0e0;
+            margin: 1px 0 .5em;
+            order: 2;
+            -webkit-transition: background .3s;
+            -moz-transition: background .3s;
+            -ms-transition: background .3s;
+            -o-transition: background .3s;
+            transition: background .3s;
+        }
+
+        .personal-info input:focus,
+        .form textarea:focus {
+            border-bottom-width: 2px;
+            border-bottom-color: #00bfa5;
+            margin-top: 0;
+        }
+
+        .personal-info input {
+            font-size: 1em;
+            line-height: 1;
+            padding: 1em 0 .5em;
+        }
+
+        .form-field--name input {
+            font-weight: 500;
+        }
+
+        .form label {
+            color: #00bfa5;
+            display: none;
+            font-size: .75em;
+            padding: 1.333333333em 0 0;
+        }
+
+        .form textarea + label {
+            order: 1;
+            display: block;
+        }
+
+        .form textarea:focus + label {
+            color: #00bfa5;
+        }
+
+        .form textarea {
+            font-size: 1em;
+            line-height: 1.5;
+            min-height: 4em;
+            min-width: 100%;
+            padding: .5em 0;
+        }
+
+        .btn-style {
+            background-color: transparent;
+            border: none;
+            color: #424242;
+            padding: 1.5em;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: .75em;
+        }
+
+        .btn-style:hover {
+            background: #bdbdbd;
+            text-decoration: none;
+            color: #FFF;
+            border-radius: 3%;
+        }
+
+
+        @media (min-width: 72em) {
+            .form textarea {
+                font-size: 1em;
+                line-height: 1.5;
+                min-height: 6em;
+                min-width: 100%;
+                padding: .5em 0;
+            }
+
+        }
+
+        @media (max-width: 36em) {
+            .personal-info input {
+                font-size: .75em;
+            }
+
+        }
+
+        #contacts {
+
+        }
+
+        #contacts h1 {
+            font-size: 4.5em;
+            font-weight: 400;
+            margin: 1.3125em .5em .375em .5em;
+            line-height: 1;
+            text-align: center;
+
+        }
+
+    </style>
+
+
+<section id="contacts">
+
+    <h1>Fale com a OAI</h1>
+
+        <div class="contacts-wrapper flex flex-wrap">
+
+            <div class="form flex justify-center">
+                <div class="form-wrapper flex flex-column">
+                    <div class="personal-info flex flex-column">
+                        <div class="name-wrapper flex justify-start">
+                            <label class="name" for="cNome">Nome: </label>
+                            <input class="name-text" type="text" size="26" name="tNome" id="cNome" maxlength="50"
+                                   placeholder="Nome Completo" required
+                                   title="Ops, o campo nome deve ser preenchido corretamente :)"
+                                   x-moz-errormessage="Ops, o campo nome deve ser preenchido corretamente :)"/>
+                        </div>
+
+                        <div class="email-wrapper flex justify-start">
+                            <label class="email" for="cEmail">Email: </label>
+                            <input class="email-text" type="email" size="26" name="tEmail" id="cEmail" maxlength="60"
+                                   placeholder="Email" required
+                                   title="EX: seunome@gmail.com"
+                                   x-moz-errormessage="EX: seunome@gmail.com"/>
+                        </div>
+                    </div>
+
+                    <div class="message">
+
+                        <div class="message-wrapper flex justify-start">
+                            <label class="text-message" for="cMensagem"> Mensagem: </label>
+					<textarea class="lato" name="tMensagem" id="cMensagem" cols="36" required
+                              placeholder="Digite a sua mensagem"
+                              title="Ops, o campo mensagem deve ser preenchido corretamente :)"
+                              x-moz-errormessage="Ops, o campo mensagem deve ser preenchido corretamente :)"></textarea>
+                        </div>
+                    </div>
+                    <div class="button flex justify-end">
+                        <div class="btn-wrapper">
+                            <input class="btn-style" name="ir" type="submit" value="ENVIAR"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>
+
+
+                <style>
+
+                    .region {
+                        width: 100%;
+                    }
+
+                    .region-wrapper {
+                        width: 100%;
+                    }
+
+                    .cities {
+                        min-width: 10em;
+                        width: 100%;
+                        flex: 1;
+                        padding: 1em;
+                        border: 1px solid #ccc;
+                        border-radius: 1%;
+                        margin: 1em;
+                    }
+
+                    .region h1 {
+                        text-align: left;
+                        font-size: 4.5em;
+                        font-weight: 400;
+                        margin: 1em 0 0.5em;
+                    }
+
+                    .icon-phone, .icon-plus-circled, .icon-mobile {
+                        font-size: 1.125em;
+                        padding-right: .150em;
+                    }
+
+                    .icon-location {
+                        font-size: 2.25em;
+                        padding-bottom: .375em;
+                    }
+
+                    .city-name {
+                        font-size: 1.125em;
+                        font-weight: 600;
+                        color: #212121;
+                        text-transform: uppercase;
+                    }
+
+                    .street {
+                        font-size: .875em;
+                        letter-spacing: -.3px;
+                    }
+
+                    .address, .phones {
+                        color: #37474f;
+                    }
+
+                    .principal-phone {
+                        letter-spacing: .8px;
+                        padding: .75em 0em .375em 0em ;
+                        font-size: 1em;
+                    }
+
+                    .additional-phone {
+                        font-size: .875em;
+                        letter-spacing: -.3px;
+                    }
+
+                </style>
+
+    <section class="region flex align-center flex-column">
+
+        <h2>Nossos Escritórios</h2>
+
+        <div class="region-wrapper flex flex-wrap ">
+
+            <div class="cities flex flex-column align-center">
+
+                <span class="city-name flex">ASSIS</span>
+
+                <div class="address flex align-center">
+
+                    <span class="street">Cap. Francisco R. Garcia, 153</span>
+
+                </div>
+
+                <div class="phones flex flex-column align-center">
+
+                    <div class="principal-phone flex align-center">
+
+                        <span class="icon-phone flex align-center"></span>
+
+                        <span class="number">18 3421 2000</span>
+
+                    </div>
+
+                    <div class="additional-phone flex align-center">
+
+                        <span class="icon-plus-circled flex align-center"></span>
+
+                        <span class="number">18 9 9749 2000</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="cities flex flex-column align-center">
+
+                <span class="city-name flex">PALMITAL</span>
+
+                <div class="address flex align-center">
+
+                    <span class="street">Manoel Leão Rego, 153</span>
+
+                </div>
+
+                <div class="phones flex flex-column align-center">
+
+                    <div class="principal-phone flex align-center">
+
+                        <span class="icon-phone flex align-center"></span>
+
+                        <span class="number">18 3351 9500</span>
+
+                    </div>
+
+                    <div class="additional-phone flex align-center">
+
+                        <span class="icon-plus-circled flex align-center"></span>
+
+                        <span class="number">18 9 9645 0515</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="cities flex flex-column align-center">
+
+                <span class="city-name flex">DEMAIS LOCALIDADES</span>
+
+                <div class="phones flex flex-column align-center">
+
+                    <div class="principal-phone flex align-center">
+
+                        <span class="icon-phone flex align-center"></span>
+
+                        <span class="number">0800 722 7998</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+

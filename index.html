@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<title>Oai Telecom</title>
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<script src="dist/js/villa.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="dist/css/villa.min.css"/>
+	<link rel="stylesheet" href="dist/css/mowe.min.css"/>
+	<link rel="stylesheet" href="dist/css/icon.css"/>
+	<link rel="stylesheet" href="css/oai.css"/>
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
+	<script src="dist/js/html5shiv.js"></script>
+	<script src="dist/js/html5shiv-printshiv.js"></script>
+	<script src="dist/js/classList.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true">
+	</script>
+	<script type="text/javascript">
+		var map;
+		var centerPos = new google.maps.LatLng(-22.6259642,-50.2902541);
+		var zoomLevel = 10;
+		function initialize() {
+			var mapOptions = {
+				center: centerPos,
+				zoom: zoomLevel,
+				scrollwheel: false,
+			};
+			map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
+
+			var locations = [
+				['assis', -22.661807,-50.4026562],
+				['cnp', -22.6074217,-50.0168386],
+				['cmota', -22.7444256,-50.4203003],
+				['echapora', -22.4296452,-50.2227159],
+				['ibirarema', -22.8148214,-50.0869049],
+				['nsparecida', -22.9683604,-50.268502],
+				['nalexandria', -22.6985332,-50.3090133],
+				['obressane', -22.3153487,-50.2991],
+				['palmital', -22.7884344,-50.2516319],
+				['platina', -22.6324697,-50.2223892]
+			];
+
+			var image = 'img/icon.png';
+
+			for (i = 0; i < locations.length; i++) {
+				marker = new google.maps.Marker({
+					position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+					title: locations[i][0],
+					map: map,
+					icon: image
+				});
+			}
+
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+	</script>
+</head>
+<body class="navbar-fixed">
+<div class="navbar fixed-sm user-unselect">
+	<div class="full wide container">
+
+		<header class="bg-sm">
+
+			<div class="item">
+
+				<a class="brand" href="#">
+					<img src="dist/img/oai.png" alt="Oai Telecom"/>
+				</a>
+
+				<!--<a class="logo font-grey-700" href="#">
+					<svg id="bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+						<g>
+							<path d="M332,203.5c151.6,163.9,151.6,429.1,0,592.9"></path>
+							<path d="M403.5,111.8c199.7,214.6,199.7,561.9,0,776.5"></path>
+							<path d="M468,20c266.7,265.3,266.7,694.7,0,960"></path>
+						</g>
+					</svg>
+				</a>-->
+
+			</div>
+
+			<button class="toggle light-green-800 font-white">
+
+				<svg version="1.1" id="bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+					<g>
+						<line class="st0" x1="99.1" y1="182.2" x2="1000" y2="182.2"/>
+						<line class="st0" x1="99.1" y1="504.6" x2="1000" y2="504.6"/>
+						<line class="st0" x1="99.1" y1="817.8" x2="1000" y2="817.8"/>
+					</g>
+				</svg>
+
+			</button>
+
+		</header>
+
+		<footer>
+
+			<div class="menu bg-sm font-white">
+				<div class="item">
+					<a class="link hfont-green-200" href="#about">Sobre</a>
+				</div>
+				<div class="item">
+					<a class="link hfont-green-200" href="#prices">Planos</a>
+				</div>
+				<div class="item">
+					<a class="link hfont-green-200" href="#cities">Cidades</a>
+				</div>
+				<div class="item">
+					<a class="link hfont-green-200" href="#contact">Contato</a>
+				</div>
+				<div class="item light-green-800">
+					<a class="link hfont-green-200" href="https://oai.com.br/mail/" target="_blank">Webmail</a>
+				</div>
+			</div>
+
+		</footer>
+
+
+	</div>
+</div>
+
+<div class="hero green-300 bg-cover font-white height-window" height-offset="0">
+
+	<style scoped="scoped">
+		.hero {
+			background-image: url('dist/img/landscape05.jpg');
+			background-position: center;
+		}
+	</style>
+
+	<div class="wide container flex flex-wrap">
+
+		<div class="welcome grow-3">
+			<h1>Bem vindo à<br/><strong>OAI Telecom</strong>!</h1>
+		</div>
+
+		<div class="promo grow-1 font-grey-50">
+			<div id="promo01">
+				<p>
+					<span class="small">A operadora original, autêntica e interativa</span>
+				</p>
+			</div>
+			<a href="#" id="prices-scroll" class="btn">Conheça nossos planos</a>
+		</div>
+
+	</div>
+
+</div>
+
+	<div class="container">
+
+		<div>
+
+			<h1>Nossa história</h1>
+			<p>O que vêm a sua cabeça quando você ouve a palavra Internet ?</p>
+
+			<p>Para muitos, informação, para outros, trabalho, diversão, cultura e conhecimento. Para nós da OAI, a internet aproxima as pessoas, como nenhum outro meio de COMUNICAÇÃO, derrubando fronteiras e barreiras, com a liberdade de criar, se expressar e aparecer para o mundo, revelando maravilhas em pessoas comuns.
+			</p>
+
+			<p>É com essa motivação que trabalhamos a cada dia, inovando e expandindo para atender todo o potencial que nossos clientes e colaboradores têm a oferecer, com serviços de acesso à internet banda larga, hospedagem de sites, desenvolvimento de sites, redes wireless e voip, conectando o mundo e aproximando pessoas.
+			</p>
+
+		</div>
+
+	</div>
+
+	<span class="full-wide bg-cover photo"></span>
+
+	<div class="container">
+
+		<div class="history">
+
+			<p>Fundada em 2004, a OAI atende a milhares de clientes em todo o Brasil, fornecendo serviços ao mercado residencial e corporativo, com um atendimento exclusivo e tecnologia de ponta.
+			</p>
+
+			<p>Com constantes investimentos, a OAI amplia suas fronteiras a cada dia. Contamos com uma infra-estrutura própria, provendo acesso à Internet rápida via Rádio nas cidades de Assis, Echaporã e Oscar Bressane no estado de São Paulo e ADSL para todo o Brasil.
+			</p>
+
+			<p>Chegamos então à era da velocidade da luz, graças à implantação das redes de fibra óptica que chegam a cada endereço para oferecer o melhor serviço e garantir a velocidade ideal e necessária a cada cliente.
+			</p>
+
+		</div>
+
+	</div>
+
+<div id="prices" class="block teal-900 font-white">
+
+	<div class="container">
+		<div class="about">
+			<h1>Conheça nossos Planos</h1>
+			<p class="lead">Para melhor atender nossos clientes, criamos planos de acesso adaptados a cada exigência e necessidade.</p>
+		</div>
+		<div class="config">
+			<span>Consulte a disponibilidade para a sua cidade</span>
+		</div>
+	</div>
+
+	<div class="wipe" id="prices-wipe">
+
+		<div class="frame pricelist-palmital">
+
+			<div class="container wide">
+
+				<div class="slide">
+
+					<ul class="nav pills">
+						<li>Residencial</li>
+						<li>Rural</li>
+						<li>Corporativo</li>
+					</ul>
+
+					<ul class="content">
+
+						<li class="pricelist hidden-price" data-product-reference="residencial">
+							<ul class="content">
+								<li>
+									<span class="title">2 MB</span>
+									<span class="description">Upload: 2 MEGA</span>
+								</li>
+								<li>
+									<span class="title">4 MB</span>
+									<span class="description">Upload: 4 MEGA</span>
+								</li>
+								<li>
+									<span class="title">6 MB</span>
+									<span class="description">Upload: 6 MEGA</span>
+								</li>
+								<li>
+									<span class="title">8 MB</span>
+									<span class="description">Upload: 8 MEGA</span>
+								</li>
+								<li>
+									<span class="title">10 MB</span>
+									<span class="description">Upload: 10 MEGA</span>
+								</li>
+								<li>
+									<span class="title"> + planos</span>
+									<span class="description">Consulte-nos</span>
+								</li>
+							</ul>
+						</li>
+
+						<li class="pricelist hidden-price" data-product-reference="rural">
+							<ul class="content">
+								<li>
+									<span class="title">1 Mega</span>
+									<span class="description">Upload: 1 MEGA</span>
+								</li>
+								<li>
+									<span class="title">2 Mega</span>
+									<span class="description">Upload: 2 MEGA</span>
+								</li>
+								<li>
+									<span class="title">4 Mega</span>
+									<span class="description">Upload: 4 MEGA</span>
+								</li>
+								<li>
+									<span class="title">+ Planos</span>
+									<span class="description">Consulte-nos</span>
+								</li>
+							</ul>
+						</li>
+
+						<li class="pricelist hidden-price" data-product-reference="empresarial">
+							<ul class="content">
+								<li>
+									<span class="title">1 Mega</span>
+									<span class="description">Upload: 1 MEGA</span>
+								</li>
+								<li>
+									<span class="title">2 Mega</span>
+									<span class="description">Upload: 2 MEGA</span>
+								</li>
+								<li>
+									<span class="title">4 Mega</span>
+									<span class="description">Upload: 4 MEGA</span>
+								</li>
+								<li>
+									<span class="title">+ planos</span>
+									<span class="description">Consulte-nos</span>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+	<style>
+		h1,
+		h2 {
+			font-weight: 100;
+			margin: .5em 0 .5em;
+		}
+
+		* {
+			text-align: center;
+		}
+	</style>
+
+
+
+	<style>
+		/*** MAP ***/
+
+		#map-canvas {
+			height: 100%;
+			width: 100%;
+		}
+
+		.map-wrapper{
+			height: 100vh;
+			background-color: #004d40;
+			width: 53em;
+		}
+
+
+		/*** NUVEM DE TAGS ***/
+
+		.cloud {
+
+
+		}
+
+		.cloud-wrapper {
+
+			flex: 1;
+
+		}
+
+		.cloud ul {
+
+			margin: 1em;
+
+		}
+
+
+		.cloud ul li {
+
+			border: 2px solid #616161;
+			border-radius: 5px;
+			font-size: 1em;
+			line-height: 1.5;
+			padding: .5em 1em;
+			white-space: nowrap;
+			cursor: pointer;
+			margin: .5em;
+			display: inline-flex;
+
+		}
+
+		.cloud ul li:hover {
+			background-color: #004d40;
+			color: #FFF;
+			border: 2px solid #455a64;
+		}
+
+		.cloud h1 {
+			font-size: 4.5em;
+			font-weight: 400;
+			margin: 1.3125em .5em .375em .5em;
+			line-height: 1;
+			text-align: left;
+
+		}
+
+		.cloud p {
+
+			text-align: left;
+			margin-left: 2.25em;
+			margin-right: 1em;
+
+		}
+
+		.tag {
+
+			display: flex;
+			justify-content: center;
+			font-weight: 400;
+
+		}
+
+		.cities {
+
+		}
+
+/*======Container======*/
+
+		.cities-container {
+			background-color: #eeeeee;
+			width: 100%;
+		}
+
+
+		@media (max-width: 36em) {
+
+			.map-wrapper {
+				display: none;
+			}
+
+			.cities {
+
+			}
+
+			.city-name {
+				font-size: .75em;
+			}
+
+			.data-container {
+
+				justify-content: center;
+
+			}
+		}
+
+		#cities {
+
+			padding: 0;
+
+		}
+
+	</style>
+
+<div id="cities" class="block grey-200 font-grey-800 flex flex-column">
+
+	<section class="cities-container flex">
+
+		<section class="map-wrapper flex">
+			<div id="map-canvas"></div>
+		</section>
+
+		<div class="cloud">
+			<h1>Cidades Atendidas</h1>
+			<p>A OAI possui infra estrutura de ponta em várias cidades da região.</p>
+			<p>Confira quais são elas:</p>
+			<div class="cloud-wrapper">
+				<ul class="cities flex flex-wrap">
+					<li class="tag">Assis</li>
+					<li class="tag">C. Novos Paulista</li>
+					<li class="tag">Cândido Mota</li>
+					<li class="tag">Echaporã</li>
+					<li class="tag">Ibirarema</li>
+					<li class="tag">Nossa Sra Aparecida</li>
+					<li class="tag">Nova Alexandria</li>
+					<li class="tag">Oscar Bressane</li>
+					<li class="tag">Palmital</li>
+					<li class="tag">Platina</li>
+					<li class="tag">Demais Localidades</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+
+
+
+	<!--<div class="contacts flex flex-row flex-wrap justify-around width-100">
+		<div class="contact flex flex-column align-center">
+			<span class="icon-phone"></span>
+			<span class="number">18 3351 2122</span>
+			<span class="title">Fixo</span>
+		</div>
+		<a href="mailto:webtal@webtal.com.br" class="contact flex flex-column align-center">
+			<span class="icon-mail"></span>
+			<span class="email">webtal@webtal.com.br</span>
+			<span class="title">Email</span>
+		</a>
+		<div class="contact flex flex-column align-center">
+			<span class="icon-mobile"></span>
+			<span class="number">18 9 9645 0515</span>
+			<span class="title">Vivo</span>
+		</div>
+	</div>
+
+	<h2>Horários de atendimento</h2>
+
+	<style scoped="scoped">
+
+		.office-hours {
+			max-width: 24em;
+			width: 100%;
+		}
+
+		.office-hours .office-hour {
+			border: solid 2px #00bfa5;
+			border-radius: 8px;
+			padding: 1em;
+			margin: 1em 0;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.office-hours .office-hour span {
+			width: 100%;
+			text-align: center;
+		}
+
+		.office-hours .office-hour .days {
+			font-size: 2.5em;
+		}
+
+	</style>
+
+	<div class="office-hours flex width-100 justify-around flex-wrap">
+		<div class="office-hour flex flex-column align-center hfont-white h-teal-a700">
+			<span class="days">Seg/Sex</span>
+			<span class="hour">08:00 até 18:00</span>
+		</div>
+		<div class="office-hour flex flex-column align-center hfont-white h-teal-a700">
+			<span class="days">Sábado</span>
+			<span class="hour">08:00 até 13:00</span>
+		</div>
+	</div>-->
+
+
+<footer class="block flex justify-around flex-wrap grey-900 font-grey-600 border-grey-600">
+	<div class="about flex flex-column align-center">
+		<span class="address">(18) 3351-2122 / Webtal Telecom, Palmital, SP, CEP 19970-000</span>
+		<span class="copyright">©Webtal Telecom 2015</span>
+	</div>
+	<div class="divisor"></div>
+	<div class="about flex flex-column align-center">
+		<a href="//kabanas.info">
+			<img src="dist/img/footer-dev-inverse.png" alt="Mowe & Kabana's Info"/>
+		</a>
+		<span class="copyright">Desenvolvimento</span>
+	</div>
+</footer>
+
+<script>
+
+	var _emailService = 'site@webtal.com.br';
+	//_emailService = 'eduardo@kabanas.info';
+	var _emailServiceURL = 'http://mailman.letsmowe.com/wtal/';
+	var emailServiceCount = 4;
+	var emailServiceClickCount = 8;
+
+	/**
+	 * Set the margin of ruler element
+	 * @param a target element (ruler)
+	 * @param n number of nodes
+	 */
+	var citySetMargin;
+	citySetMargin = function(a, n) {
+		a.style.marginLeft = n * 100 + '%';
+	};
+
+	/**
+	 * Set the class based on value
+	 * @param a event target
+	 * @param b target element (ruler)
+	 * @param v value
+	 */
+	var citySetClass;
+	citySetClass = function(a, b, v) {
+		for (var i = a.length; i--; )
+			b.classList.remove(a[i].value);
+		b.classList.add(v);
+	};
+
+	/**
+	 * Get the node index
+	 * @param a event target
+	 * @param v value
+	 * return int
+	 */
+	var cityGetIndex;
+	cityGetIndex = function(a, v) {
+		for (var i = a.length; i--; )
+			if (a[i].value == v)
+				return -i;
+		return 0;
+	};
+
+	/**
+	 * Do the distinct
+	 * @param a event target
+	 * @param b target element (ruler)
+	 */
+	var doCityDistinct;
+	doCityDistinct = function(a, b) {
+		var n, v;
+
+		v = a.value;
+		n = cityGetIndex(a.children, v);
+
+		citySetClass(a.children, b, v);
+		citySetMargin(b, n);
+	};
+
+	/**
+	 * Handler the functions to init the distinct
+	 */
+	var cityHandler;
+	cityHandler = function() {
+		doCityDistinct(this, this.b);
+	};
+
+	/**
+	 * Add event listener to element
+	 * @param a element
+	 * @param b target element (ruler)
+	 */
+	function distinctCity (a, b) {
+		a.addEventListener('change', cityHandler, false);
+		a.b = b;
+		doCityDistinct(a, b);
+	}
+
+	/**
+	 * Wipe Lib Venus
+	 */
+	function doWipe(a) {
+		for (var i = a.length; i--; )
+			a[i].style.width = a[i].getElementsByClassName('frame').length * 100 + '%';
+	}
+
+	var callDistinct;
+	callDistinct = function() {
+		var a, b, i;
+		a = document.getElementById('city');
+		b = document.getElementById('prices-wipe');
+		for (i = a.length; i--; )
+			if (a[i].value == this.value)
+				a[i].selected = true;
+		doCityDistinct(a, b);
+		var m = document.getElementsByClassName('modal-container');
+		for (i = m.length; i--; )
+			m[i].classList.remove('open');
+	};
+
+	var buildCityList;
+	buildCityList = function() {
+		var a = document.getElementById('citylist');
+		var c = document.getElementById('city').getElementsByTagName('option');
+		var e = document.createElement('div');
+		e.classList.add('container');
+		var n = c.length;
+		for (var i = 0; i < n; i++) {
+
+			var d = document.createElement('div');
+			var ea = document.createElement('button');
+			ea.classList.add('city');
+			ea.addEventListener('click', callDistinct, false);
+			ea.setAttribute('value', c[i].value);
+
+			var eaa = document.createTextNode(c[i].innerHTML);
+
+			ea.appendChild(eaa);
+			d.appendChild(ea);
+			e.appendChild(d);
+		}
+		a.insertBefore(e, a.lastChild);
+	};
+
+	var city = document.getElementById('city');
+	var pricesWipe = document.getElementById('prices-wipe');
+	distinctCity(city, pricesWipe);
+
+	var wipelist = document.getElementsByClassName('wipe');
+	doWipe(wipelist);
+
+	buildCityList();
+
+	var g = document.getElementById('citylist').getElementsByTagName('button')[0];
+	g.focus();
+
+	/* CONTACT FUNCTIONS START HERE */
+
+	var minifyAllForms = function() {
+		var b = document.querySelectorAll('.pricelist .content > li');
+		for (var i = b.length; i--; )
+			minifyForm(b[i]);
+	};
+
+	var minifyForm = function(a) {
+		a.classList.remove('error');
+		a.classList.remove('success');
+		a.classList.remove('active');
+	};
+
+	/**
+	 * Handler of send button to calls the sendResponse function
+	 */
+	var toggleForm;
+	toggleForm = function() {
+
+		var a = this.parentNode;
+
+		if ((a.classList.contains('error')) || (a.classList.contains('success'))) {
+			minifyForm(a);
+		} else {
+			if (a.classList.contains('active')) {
+				a.classList.remove('active');
+			} else {
+				minifyAllForms();
+				a.classList.add('active');
+				a.querySelectorAll('[name=name]')[0].focus();
+			}
+
+		}
+
+	};
+
+	var buildForm;
+	buildForm = function(e) {
+		var link = document.createElement('a');
+		link.setAttribute('class', 'action user-unselect cursor-pointer toggle-contact-form');
+
+		var inputName = document.createElement('input');
+		inputName.type = 'text';
+		inputName.setAttribute('class', 'contact-form');
+		inputName.setAttribute('name', 'name');
+		inputName.setAttribute('placeholder', 'Nome');
+		inputName.setAttribute('autocomplete', 'off');
+
+		var inputPhone = document.createElement('input');
+		inputPhone.type = 'tel';
+		inputPhone.setAttribute('class', 'contact-form');
+		inputPhone.setAttribute('name', 'phone');
+		inputPhone.setAttribute('placeholder', 'Telefone (apenas números)');
+		inputPhone.setAttribute('autocomplete', 'off');
+
+		var inputSubmit = document.createElement('a');
+		inputSubmit.setAttribute('class', 'contact-form action response-send user-unselect cursor-pointer');
+
+		var submitAlert = document.createElement('span');
+		submitAlert.classList.add('alert');
+
+		e.appendChild(link);
+		e.appendChild(inputName);
+		e.appendChild(inputPhone);
+		e.appendChild(inputSubmit);
+		e.appendChild(submitAlert);
+	};
+
+	/**
+	 * Append the form and add the lister events
+	 */
+	var appendForm;
+	appendForm = function() {
+		var i;
+
+		var pricelistItems = document.querySelectorAll('.pricelist .content > li');
+
+		for (i = pricelistItems.length; i--; ) {
+			var item = pricelistItems[i];
+			buildForm(item);
+		}
+
+		var toggleFormBtn = document.getElementsByClassName('toggle-contact-form');
+
+		for (i = toggleFormBtn.length; i--; )
+			toggleFormBtn[i].addEventListener('click', toggleForm);
+	};
+
+	appendForm();
+
+	/* CONTACT FUNCTIONS ENDS HERE */
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="dist/js/dist.min.js"></script>
+
+<script>
+
+	/* CONTACT FUNCTIONS START HERE */
+
+	var setSubmitAlert = function(a, b) {
+		a.classList.remove('active');
+		a.classList.remove('sent');
+		a.classList.add(b);
+	};
+
+	var sendResponse = function(a, c) {
+		console.log(c);
+		/*emailServiceCount--;
+		setSubmitAlert(a, 'success');*/
+		$.ajax({
+			cache: false,
+			data: c,
+			crossDomain: true,
+			beforeSend: function() {
+				a.classList.add('sent');
+			},
+			error: function(data) {
+//				setSubmitAlert(a, 'error');
+//				TODO - temporary function to fix bug of Cors
+				setSubmitAlert(a, 'success');
+			},
+			success: function(data) {
+				setSubmitAlert(a, 'success');
+				emailServiceCount--;
+			},
+			url: _emailServiceURL
+		});
+	};
+
+	/**
+	 * Load and send the response
+	 */
+	var ctrlResponse;
+	ctrlResponse = function() {
+		var a = this.parentNode;
+		console.log();
+		var aa = a.querySelectorAll('[name=name]')[0].value;
+		var ab = a.querySelectorAll('[name=phone]')[0].value;
+		var ac = document.getElementById('city').value;
+
+		// Test number of clicks to request (MAX = 4)
+		if (emailServiceClickCount > 0) {
+
+			// Test if fields are null
+			if ((aa.length > 0) && (ab.length > 0)) {
+				emailServiceClickCount--;
+				var b = a.parentNode.parentNode;
+				var	c = {
+					city: ac,
+					name: aa,
+					phone: ab,
+					product: a.querySelectorAll('.title')[0].innerHTML,
+					reference: b.getAttribute('data-product-reference'),
+					mail: _emailService
+				};
+				// Test number of requests (MAX = 4)
+				if (emailServiceCount > 0) {
+					sendResponse(a, c);
+				} else {
+					a.classList.remove('active');
+					a.classList.add('error');
+				}
+			} else {
+				alert('Campos vazios');
+			}
+		} else {
+			a.classList.remove('active');
+			a.classList.add('error');
+		}
+	};
+
+	var sendBtn = document.getElementsByClassName('response-send');
+
+	for (i = sendBtn.length; i--; )
+		sendBtn[i].addEventListener('click', ctrlResponse);
+
+	/* CONTACT FUNCTIONS ENDS HERE */
+
+	window.onload = function () {
+
+		$('#prices .slide .nav>li').distinct({
+			content: $("#prices .slide .content .pricelist"),
+			defaultClass: $("#prices").attr("class"),
+			startName: "slide",
+			target: $("#prices")
+		});
+
+	};
+
+	$('#prices-scroll').click(function () {
+		$("html, body").animate({
+					scrollTop: $('#prices').offset().top
+				}, '1200'
+		);
+	});
+
+	$('.wow').click(function () {
+		if (!$(this).hasClass('show')) {
+			$(this).addClass('show');
+		} else {
+			$(this).removeClass('show');
+		}
+	});
+
+	$('.navbar header .toggle').click(function () {
+		$(this).closest('.navbar').find('.menu').toggleClass('show');
+	});
+
+	window.onload = function () {
+
+		$('.block').scrollList({
+			beforePadding: 65,
+			startName: "block"
+		});
+
+		$('#prices .slide .nav>li').distinct({
+			content: $("#prices .slide .content .pricelist"),
+			defaultClass: $("#prices").attr("class"),
+			startName: "slide",
+			target: $("#prices")
+		});
+
+	};
+</script>
+
+</body>
