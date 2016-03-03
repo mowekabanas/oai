@@ -14,12 +14,7 @@
     padding: 0 1em;
 }
 
-.hero > * {
-    margin: 1em auto;
-    min-width: 20em;
-}
-
-.navbar-fixed .hero > * {
+.navbar-fixed .hero-inner > * {
     margin: 1.5em auto 1em; /* top: 3.5em to navbar + 1em to hero */
 }
 
@@ -29,10 +24,6 @@
 }
 
 @media (min-width: 43.75em) {
-
-    .navbar-fixed .hero > * {
-        margin: 4.5em auto 1em; /* top: 3.5em to navbar + 1em to hero */
-    }
 
     .hero h1 {
         font-size: 3em;
@@ -84,17 +75,10 @@
 */
 
 .navbar {
-    /*background-color: transparent;*/
+    background-color: transparent;
     min-height: 3.75em;
-
     width: 100%;
     z-index: 100;
-}
-
-*:active,
-*:hover,
-*:focus {
-    outline: 0;
 }
 
 button::-moz-focus-inner {
@@ -124,7 +108,7 @@ button::-moz-focus-inner {
 }
 
 .navbar .item {
-    align-items: stretch;
+    align-items: center;
 }
 
 .navbar .item a {
@@ -132,14 +116,14 @@ button::-moz-focus-inner {
 }
 
 .navbar .item a {
-    padding: 0 25px;
+    padding: 0 .5em;
+    margin: 0 1em;
 }
 
 .navbar .menu {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    font-size: .875em;
 }
 
 .navbar .item .link {
@@ -147,12 +131,12 @@ button::-moz-focus-inner {
 }
 
 .navbar header:hover .slogan {
-    padding-left: 0 !important;
+    padding-left: 0;
     transition: all .1s linear;
 }
 
 .navbar .brand {
-    padding: 0 0 0 25px !important;
+    padding: 0 0 0 25px;
 }
 
 .navbar .brand-text {
@@ -162,7 +146,7 @@ button::-moz-focus-inner {
 }
 
 .navbar .logo {
-    padding: 0 !important;
+    padding: 0;
 }
 
 .navbar header .item:hover #bg {
@@ -514,7 +498,7 @@ button::-moz-focus-inner {
 	cursor: pointer;
 	border-style: solid;
 	border-width: 1px;
-	font-size: 16px;
+	font-size: 1em;
 	padding: 15px 30px;
 	margin-left: -1px;
 }
@@ -798,28 +782,3 @@ button::-moz-focus-inner {
         margin-right: -72%; /*MARGIN MEASURE*/
     }
 }
-/*!
- * Mowe v1.0.0 (http://getvilla.org/)
- * Copyright 2013-2015 Noibe Developers
- * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
-*/
-
-html {
-	/*noinspection CssNoGenericFontName*/
-	font-family: 'open sans';
-}
-
-body {
-	overflow-x: hidden;
-}
-
-/*! Villa Nav v0.8.0 (http://getvilla.org/mowe) */
-
-
-
-/*! Villa Mowe Block v1.0.0 (http://getvilla.org/mowe) */
-
-
-
-/*! Villa Mowe WOW v1.0.0 (http://getvilla.org/mowe) */
-
