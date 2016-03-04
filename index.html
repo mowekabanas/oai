@@ -7,12 +7,13 @@
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
 <link rel="stylesheet" href="dist/css/mowe.css"/>
-<link rel="stylesheet" href="dist/css/icon.css"/>
-<link rel="stylesheet" href="css/navbar.css"/>
-<link rel="stylesheet" href="css/hero.css"/>
-<link rel="stylesheet" href="css/pricelist.css"/>
-<link rel="stylesheet" href="css/transition.css"/>
-<link rel="stylesheet" href="css/oai.css"/>
+<link rel="stylesheet" href="dist/css/oai.min.css"/>
+<!--<link rel="stylesheet" href="css/navbar.css"/>-->
+<!--<link rel="stylesheet" href="css/hero.css"/>-->
+<!--<link rel="stylesheet" href="css/pricelist.css"/>-->
+<!--<link rel="stylesheet" href="css/transition.css"/>-->
+<!--<link rel="stylesheet" href="css/z_oai.css"/>-->
+<!--<link rel="stylesheet" href="css/cities.css"/>-->
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <script src="dist/js/html5shiv.js"></script>
@@ -33,15 +34,16 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script type="text/javascript">
 	var map;
-	var centerPos = new google.maps.LatLng(-22.6259642,-50.2902541);
-	var zoomLevel = 10;
+	var centerPos = new google.maps.LatLng(-22.689642,-50.302541);
+	var zoomLevel = 11;
 	function initialize() {
 		var mapOptions = {
 			center: centerPos,
 			zoom: zoomLevel,
 			scrollwheel: false
 		};
-//			map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
+
+		map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
 
 		var locations = [
 			['assis', -22.661807,-50.4026562],
@@ -66,6 +68,10 @@
 				icon: image
 			});
 		}
+
+		var style = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#03a9f4"},{"visibility":"on"}]}];
+
+		map.setOptions({styles: style});
 
 	}
 	google.maps.event.addDomListener(window, 'load', initialize);
@@ -131,16 +137,16 @@
 
 			<div class="menu bg-sm font-grey-500">
 				<div class="item">
-					<a href="#about" class="link hfont-grey-400">Sobre</a>
+					<a href="#sobre" class="link hfont-grey-400">Sobre</a>
 				</div>
 				<div class="item">
-					<a href="#prices" class="link hfont-grey-400">Planos</a>
+					<a href="#planos" class="link hfont-grey-400">Planos</a>
 				</div>
 				<div class="item">
-					<a href="#cities" class="link hfont-grey-400">Cidades</a>
+					<a href="#cidades" class="link hfont-grey-400">Cidades</a>
 				</div>
 				<div class="item">
-					<a href="#contact" class="link font-light-blue-a400 hfont-light-blue-a200">
+					<a href="#contato" class="link font-light-blue-a400 hfont-light-blue-a200">
 						<strong>Contato</strong>
 					</a>
 				</div>
@@ -167,8 +173,8 @@
 		}
 
 		.hero-overlay {
-			background: -webkit-linear-gradient(top, rgba(255,255,255,1) 10%, rgba(255,255,255,.6) 18%, transparent 36%, rgba(0,0,0,0.48) 100%);
-			background: linear-gradient(to bottom, rgba(255,255,255,1) 10%, rgba(255,255,255,.6) 18%, transparent 36%, rgba(0,0,0,0.48) 100%);
+			background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,.6) 18%, transparent 36%, rgba(0,0,0,0.48) 100%);
+			background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,.6) 18%, transparent 36%, rgba(0,0,0,0.48) 100%);
 		}
 
 	</style>
@@ -212,7 +218,7 @@
 
 </div>
 
-<div class="container">
+<div id="sobre" class="container">
 
 	<div class="text">
 
@@ -250,7 +256,7 @@
 
 </div>
 
-<div id="prices" class="block light-blue-600 font-white">
+<div id="planos" class="block light-blue-600 font-white">
 
 	<div class="container">
 
@@ -366,173 +372,149 @@
 
 </div>
 
-	<style>
-		h1,
-		h2 {
-			font-weight: 100;
-			margin: .5em 0 .5em;
-		}
+<article id="cities-block" class="CitiesBlock">
 
-		* {
-			/*text-align: center;*/
-		}
-	</style>
+	<h2>Cidades Atendidas</h2>
 
+	<p>A OAI possui infra estrutura de ponta em várias cidades da região.<br/> Confira quais são elas:</p>
 
+	<div id="cidades" class="Cities">
 
-	<style>
-		/*** MAP ***/
+		<div class="Cities-background">
 
-		#map-canvas {
-			height: 100%;
-			width: 100%;
-		}
+			<div class="CitiesMap">
 
-		.map-wrapper{
-			height: 100vh;
-			background-color: #004d40;
-			width: 53em;
-		}
+				<div id="map-canvas" class="CitiesMap-canvas"></div>
 
-		/*** NUVEM DE TAGS ***/
+			</div>
 
-		.cloud {
+		</div>
 
+		<div class="Cities-inner">
 
-		}
+			<section class="CitiesList">
 
-		.cloud-wrapper {
+				<ul class="CitiesList-menu">
 
-			flex: 1;
+					<li class="CitiesItem">
 
-		}
+						<a class="CitiesItem-select-area">Assis</a>
 
-		.cloud ul {
+					</li>
 
-			margin: 1em;
+					<li class="CitiesItem">
 
-		}
+						<a class="CitiesItem-select-area">C. Novos Paulista</a>
 
+					</li>
 
-		.cloud ul li {
+					<li class="CitiesItem">
 
-			border: 2px solid #616161;
-			border-radius: 5px;
-			font-size: 1em;
-			line-height: 1.5;
-			padding: .5em 1em;
-			white-space: nowrap;
-			cursor: pointer;
-			margin: .5em;
-			display: inline-flex;
+						<a class="CitiesItem-select-area">Cândido Mota</a>
 
-		}
+					</li>
 
-		.cloud ul li:hover {
-			background-color: #004d40;
-			color: #FFF;
-			border: 2px solid #455a64;
-		}
+					<li class="CitiesItem">
 
-		.cloud h1 {
-			font-size: 4.5em;
-			font-weight: 400;
-			margin: 1.3125em .5em .375em .5em;
-			line-height: 1;
-			text-align: left;
+						<a class="CitiesItem-select-area">Echaporã</a>
 
-		}
+					</li>
 
-		.cloud p {
+					<li class="CitiesItem">
 
-			text-align: left;
-			margin-left: 2.25em;
-			margin-right: 1em;
+						<a class="CitiesItem-select-area">Ibirarema</a>
 
-		}
+					</li>
 
-		.tag {
+					<li class="CitiesItem">
 
-			display: flex;
-			justify-content: center;
-			font-weight: 400;
+						<a class="CitiesItem-select-area">Nossa Sra Aparecida</a>
 
-		}
+					</li>
 
-		.cities {
+					<li class="CitiesItem">
 
-		}
+						<a class="CitiesItem-select-area">Nova Alexandria</a>
 
-/* Container */
+					</li>
 
-		.cities-container {
-			background-color: #eeeeee;
-			width: 100%;
-		}
+					<li class="CitiesItem">
 
+						<a class="CitiesItem-select-area">Oscar Bressane</a>
 
-		@media (max-width: 36em) {
+					</li>
 
-			.map-wrapper {
-				display: none;
-			}
+					<li class="CitiesItem">
 
-			.cities {
+						<a class="CitiesItem-select-area">Palmital</a>
 
-			}
+					</li>
 
-			.city-name {
-				font-size: .75em;
-			}
+					<li class="CitiesItem">
 
-			.data-container {
+						<a class="CitiesItem-select-area">Platina</a>
 
-				justify-content: center;
+					</li>
 
-			}
-		}
-
-		#cities {
-
-			padding: 0;
-
-		}
-
-	</style>
-
-<div id="cities" class="block grey-200 font-grey-800 flex flex-column">
-
-	<section class="cities-container flex">
-
-		<section class="map-wrapper flex">
-
-			<div id="map-canvas"></div>
-
-		</section>
-
-		<div class="cloud">
-
-			<h1>Cidades Atendidas</h1>
-
-			<p>A OAI possui infra estrutura de ponta em várias cidades da região.</p>
-
-			<p>Confira quais são elas:</p>
-
-			<div class="cloud-wrapper">
-
-				<ul class="cities flex flex-wrap">
-					<li class="tag">Assis</li>
-					<li class="tag">C. Novos Paulista</li>
-					<li class="tag">Cândido Mota</li>
-					<li class="tag">Echaporã</li>
-					<li class="tag">Ibirarema</li>
-					<li class="tag">Nossa Sra Aparecida</li>
-					<li class="tag">Nova Alexandria</li>
-					<li class="tag">Oscar Bressane</li>
-					<li class="tag">Palmital</li>
-					<li class="tag">Platina</li>
-					<li class="tag">Demais Localidades</li>
 				</ul>
+
+			</section>
+
+		</div>
+
+	</div>
+
+	<section class="Offices">
+
+		<h3>Nossos Escritórios</h3>
+
+		<div class="OfficesList">
+
+			<div class="OfficeItem">
+
+				<header class="OfficeItem-header">
+
+					<span class="OfficeItem-icon icon-location"></span>
+
+					<h4 class="city-name flex">Assis</h4>
+
+				</header>
+
+				<div class="OfficeItem-content">
+
+					<p class="OfficeItem-address">Cap. Francisco R. Garcia, 153</p>
+
+					<a href="https://www.google.com/maps/dir//R.+Cap.+Francisco+Rodrigues+Garc%C3%ADa,+153+-+San+Fernando+Valley,+Assis+-+SP,+19800-390,+Brasil/@-22.6619179,-50.4197305,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x9495399b9b9cacbf:0xf893f342243a017a!2m2!1d-50.4175418!2d-22.6619179" class="OfficeItem-button">
+
+						<span class="icon-direction"></span>
+						<span>Como chegar</span>
+
+					</a>
+
+				</div>
+
+			</div>
+
+			<div class="OfficeItem">
+
+				<header class="OfficeItem-header">
+
+					<span class="OfficeItem-icon icon-location"></span>
+
+					<h4 class="city-name flex">Palmital</h4>
+
+				</header>
+
+				<div class="OfficeItem-content">
+
+					<p class="OfficeItem-address">Manoel Leão Rego, 153</p>
+
+					<a href="https://www.google.com/maps/dir//-22.7858815,-50.2231128/@-22.7870683,-50.2225335,17z/data=!4m2!4m1!3e0" class="OfficeItem-button">
+						<span class="icon-direction"></span>
+						<span>Como chegar</span>
+					</a>
+
+				</div>
 
 			</div>
 
@@ -540,7 +522,7 @@
 
 	</section>
 
-</div>
+</article>
 
 <style>
 

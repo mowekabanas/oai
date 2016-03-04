@@ -12,6 +12,7 @@
 	display: -webkit-flex;
 	display: flex;
 	padding: 0 1em;
+	/*margin: -4.5em*/
 }
 
 .navbar-fixed .hero-inner > * {

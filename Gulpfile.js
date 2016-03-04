@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-		concat = require('gulp-concat'),
+		concat = require('gulp-concat-css'),
 		jshint = require('gulp-jshint'),
 		minifycss = require('gulp-minify-css'),
 		rename = require('gulp-rename'),
@@ -12,9 +12,10 @@ var cssfiles = 'css/*.css',
 
 imgfiles = 'img/*';
 
-gulp.task('wtal', function() {
-	gulp.src('css/oai.css')
-			.pipe(gulp.dest('dist/css'));
+gulp.task('oai', function() {
+	gulp.src(cssfiles)
+		.pipe(concat('oai.css'))
+		.pipe(gulp.dest('dist/css'));
 	gulp.src('dist/css/oai.css')
 			.pipe(minifycss())
 			.pipe(rename({
@@ -45,7 +46,7 @@ gulp.task('tinypng', function () {
 });
 
 gulp.task('default', function() {
-	var css = ['villa', 'mowe', 'wtal'];
+	var css = ['villa', 'mowe', 'oai'];
 	var js = ['js'];
 	gulp.watch(cssfiles, css);
 	gulp.watch(jsfiles, ['js']);
