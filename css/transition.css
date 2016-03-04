@@ -27,9 +27,9 @@ html.is-loading .navbar {
 }
 
 .navbar {
-	-webkit-transition: opacity .6s .1s;
-	-moz-transition: opacity .6s .1s;
-	-ms-transition: opacity .6s .1s;
-	-o-transition: opacity .6s .1s;
-	transition: opacity .6s .1s;
+	-webkit-transition: opacity 1s .4s;
+	-moz-transition: opacity 1s .4s;
+	-ms-transition: opacity 1s .4s;
+	-o-transition: opacity 1s .4s;
+	transition: opacity 1s .4s;
 }

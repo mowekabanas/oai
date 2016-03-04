@@ -1,0 +1,585 @@
+/*!
+ * Mowe Pricelist v1.0.0 (http://getvilla.org/)
+ * Copyright 2013-2015 Noibe Developers
+ * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
+*/
+
+#prices {
+	min-height: 100vh;
+	padding: 1em 0 1em;
+}
+
+@media (min-height: 36em) {
+
+	#prices {
+		padding: 2.25em 0 1em;
+	}
+
+}
+
+@media (min-height: 48em) {
+
+	#prices {
+		padding: 4.5em 0 1em;
+	}
+
+}
+
+@media (min-height: 60em) {
+
+	#prices {
+		padding: 6em 0 1em;
+	}
+
+}
+
+.slide .nav {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+.slide .nav li {
+	cursor: pointer;
+	font-size: 16px;
+}
+
+#prices .nav.pills li {
+	border-radius: 5px;
+}
+
+/* temporary use */
+#prices.slide-1 .nav.pills li:nth-child(1),
+#prices.slide-2 .nav.pills li:nth-child(2),
+#prices.slide-3 .nav.pills li:nth-child(3) {
+	border-style: solid;
+}
+
+.slide .nav.pills {
+	justify-content: center;
+	margin: 30px auto 60px;
+}
+
+.slide .nav.pills li {
+	border-width: 1px;
+	margin-left: -1px;
+	min-width: 150px;
+	padding: 15px 30px;
+	text-align: center;
+}
+
+/* TEMPORARY COMMENT */
+/*.slide .nav.pills li:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.slide .nav.pills li:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}*/
+
+.pricelist {
+	/*font-size: .833333333em;*/
+}
+
+.pricelist .content {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.pricelist .content li {
+	align-items: center;
+	border-radius: 8px;
+	cursor: default;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 16em;
+	padding: 1.5em 1.5em 1em;
+	text-align: center;
+}
+
+.pricelist .content li > * {
+	width: 100%;
+}
+
+@media (min-width: 48em) {
+	.pricelist .content li {
+		padding: 2.25em 2.25em 1.5em;
+		max-width: 16em;
+	}
+}
+
+@media (min-width: 60em) {
+	.pricelist .content {
+		flex-wrap: nowrap;
+	}
+
+	.pricelist .content li {
+		padding: 2.25em 2.25em 1.5em;
+		max-width: 16em;
+	}
+}
+
+@media (min-width: 72em) {
+	.pricelist .content li {
+		padding: 3em 3em 2.25em;
+	}
+}
+
+.pricelist .content li .title {
+	font-size: 1.125em;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.pricelist .content li .price {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	min-width: 180px;
+}
+
+.pricelist .content li .price .dollar {
+	font-size: 40px;
+	align-self: flex-start;
+}
+
+.pricelist .content li .price .number {
+	font-size: 3.75em;
+	line-height: 1em;
+	align-self: center;
+}
+
+.pricelist .content li .price .decimal {
+	align-self: flex-end;
+}
+
+.pricelist .content li .description {
+	font-size: 15px;
+	margin: 15px 0;
+}
+
+.pricelist .content li .action {
+	background-color: #00bfa5;
+	border: none;
+	border-radius: 25px;
+	font-size: 1em;
+	font-weight: 600;
+	color: #ffffff;
+	margin: 1em 0 .5em;
+	padding: 10px;
+	opacity: 0;
+	transition: none;
+}
+
+.pricelist .content li:hover {
+	background-color: #fafafa;
+	color: #424242;
+	transition: background .3s linear;
+}
+
+.pricelist .content li input {
+	background-color: #eeeeee;
+	border: solid 2px #00bfa5;
+	border-radius: 2px;
+	color: #424242;
+	font-size: 1.125em;
+	font-weight: 300;
+	display: block;
+	margin-top: 1em;
+	padding: 8px 12px;
+}
+
+.pricelist .content li:hover .title {
+	border-color: #fafafa;
+}
+
+.pricelist .content li:hover .action {
+	opacity: 1;
+	transition: none;
+}
+
+.pricelist.hidden-price .content li .title {
+	font-size: 3em;
+}
+
+/* TEMPORARY USE */
+#prices .pricelist {
+	opacity: 0;
+	transition: all 1s ease;
+}
+
+#prices .pricelist .content {
+	display: none;
+}
+
+#prices.slide-1 .pricelist:nth-child(1),
+#prices.slide-2 .pricelist:nth-child(2),
+#prices.slide-3 .pricelist:nth-child(3) {
+	opacity: 1;
+	transition: all 1s ease;
+}
+
+#prices.slide-1 .pricelist:nth-child(1) .content,
+#prices.slide-2 .pricelist:nth-child(2) .content,
+#prices.slide-3 .pricelist:nth-child(3) .content {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+}
+
+
+/* OAI THEME */
+
+.pricelist .content {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-start
+}
+
+.pricelist .content li {
+	border-radius: 8px;
+	max-width: 16em;
+	padding: 1.5em 1.125em 1em;
+	text-align: center
+}
+
+@media (min-width: 48em) {
+	.pricelist .content li {
+		padding: 2.25em 1.5em 1.5em;
+		max-width: 16em
+	}
+}
+
+@media (min-width: 60em) {
+	.pricelist .content {
+		flex-wrap: nowrap
+	}
+
+	.pricelist .content li {
+		padding: 2.25em 1.5em 1.5em;
+		max-width: 16em
+	}
+}
+
+@media (min-width: 72em) {
+	.pricelist .content li {
+		padding: 3em 2.25em 1.5em
+	}
+}
+
+.pricelist .content li .title {
+	border-bottom: solid 2px #e0e0e0;
+	font-size: 1.125em;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	text-transform: uppercase
+}
+
+.pricelist .content li .price {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	min-width: 180px
+}
+
+.pricelist .content li .price .dollar {
+	font-size: 40px;
+	align-self: flex-start
+}
+
+.pricelist .content li .price .number {
+	font-size: 3.75em;
+	line-height: 1em;
+	align-self: center
+}
+
+.pricelist .content li .price .decimal {
+	align-self: flex-end
+}
+
+.pricelist .content li .description {
+	color: #e0e0e0;
+}
+
+.pricelist .content li .action {
+	background-color: #e0e0e0;
+	border: none;
+	border-radius: 25px;
+	font-size: 1em;
+	font-weight: 600;
+	color: #fff;
+	margin: 1em 0 .5em;
+	padding: 10px;
+	opacity: 0;
+	transition: none
+}
+
+.pricelist .content li:hover,
+.pricelist .content li.active {
+	background-color: #fafafa;
+	color: #424242;
+	transition: background .3s linear
+}
+
+.pricelist .content li input {
+	background-color: #eee;
+	border: 2px solid #00bfa5;
+	border-radius: 2px;
+	color: #424242;
+	font-size: 1.125em;
+	font-weight: 300;
+	display: block;
+	margin-top: 1em;
+	padding: 8px 12px
+}
+
+.pricelist.hidden-price .content li .title {
+	font-size: 2.25em
+}
+
+
+.pricelist .content li:hover .send {
+	opacity: 0;
+}
+
+.pricelist .content li .contact {
+	display: flex;
+	flex-direction: column;
+}
+
+.pricelist .content li input,
+.pricelist .content li .response-send {
+	display: none;
+}
+
+.pricelist .content li.active input,
+.pricelist .content li.active .response-send {
+	display: block;
+	border-width: 2px;
+	margin-top: 1em;
+	padding: 8px 12px;
+	height: auto;
+	-webkit-transition: opacity .3s linear .15s;
+	-moz-transition: opacity .3s linear .15s;
+	-o-transition: opacity .3s linear .15s;
+	-ms-transition: opacity .43 linear .15s;
+	transition: opacity .3s linear .15s;
+}
+
+.pricelist .content li.active .alert {
+	height: auto;
+	margin: 1em 0 .5em;
+	padding: 10px;
+	-webkit-transition: opacity .4s linear .35s;
+	-moz-transition: opacity .4s linear .35s;
+	-ms-transition: opacity .4s linear .35s;
+	-o-transition: opacity .4s linear .35s;
+	transition: opacity .4s linear .35s;
+}
+
+.pricelist .content li .alert {
+	font-weight: 400;
+	height: 0;
+	padding: 0;
+	opacity: 0;
+	margin: 0;
+}
+
+.pricelist .content li.success .alert,
+.pricelist .content li.error .alert {
+	opacity: 1;
+	height: auto;
+	margin: 1em 0 .5em;
+	padding: 10px;
+}
+
+.pricelist .content li.active .contact-form {
+	opacity: 1;
+}
+
+.pricelist .content li.active,
+.pricelist .content li.success,
+.pricelist .content li.error {
+	color: #424242;
+	transition: background .3s linear;
+}
+
+.pricelist .content li.active-form .title {
+	border-color: #ffffff;
+}
+
+.pricelist .content li.active-form [data-toggle=contact-form] {
+	opacity: 1;
+	background-color: #757575;
+	transition: background .3s linear;
+}
+
+.pricelist .content li.success [data-toggle=contact-form],
+.pricelist .content li.success .contact-form,
+.pricelist .content li.error [data-toggle=contact-form],
+.pricelist .content li.error .contact-form {
+	display: none;
+}
+
+/*
+	Dynamic Transitions
+*/
+
+/* Description */
+
+.pricelist .content li:hover .description,
+.pricelist .content li.error .description,
+.pricelist .content li.success .description {
+	color: #9e9e9e;
+}
+
+/* Price Border Color */
+
+.pricelist .content li:hover .title,
+.pricelist .content li.error .title,
+.pricelist .content li.success .title {
+	border-color: #fafafa;
+}
+
+/* Toggle Form Button */
+
+.pricelist .content li:hover .toggle-contact-form,
+.pricelist .content li.active .toggle-contact-form,
+.pricelist .content li.error .toggle-contact-form,
+.pricelist .content li.success .toggle-contact-form {
+	opacity: 1;
+	transition: none;
+}
+
+/*
+	Dynamic Strings
+*/
+
+/* Toggle button */
+
+.pricelist .content li .toggle-contact-form:before {
+	content: 'Assine Já!';
+}
+
+.pricelist .content li.request .toggle-contact-form:before {
+	content: 'Consulta!';
+}
+
+.pricelist .content li.active .toggle-contact-form:before,
+.pricelist .content li.success .toggle-contact-form:before {
+	content: 'Voltar';
+}
+
+.pricelist .content li.error .toggle-contact-form:before {
+	content: 'Tentar novamente';
+}
+
+/* Submit Button */
+
+.pricelist .content li .response-send:before {
+	content: 'Solicitar Contato';
+}
+
+.pricelist .content li.active.sent .response-send:before {
+	content: 'Enviando...';
+}
+
+/* Submit Alert */
+
+.pricelist .content li.error .alert:before {
+	content: 'Houve algum erro, tente novamente mais tarde!';
+}
+
+.pricelist .content li.success .alert:before {
+	content: 'Obrigado! Logo entraremos em contato com você!';
+}
+
+.pricelist .content li.error .alert {
+	color: #d50000;
+}
+
+.pricelist .content li.success .alert {
+	color: #00bfa5;
+}
+
+/* Prices More */
+
+.prices-more {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin: 1em auto;
+	width: 100%;
+}
+
+.prices-more-select-area {
+	border-radius: 4px;
+	border: solid 1px #ffffff;
+	cursor: pointer;
+	line-height: 3;
+	padding: 0 1.5em;
+}
+
+.prices-more-select-area:active,
+.prices-more-select-area:focus,
+.prices-more-select-area:hover {
+	-webkit-box-shadow:0 0 .625em 3px rgba(255,255,255,.6);
+	-moz-box-shadow: 0 0 .625em 3px rgba(255,255,255,.6);
+	box-shadow: 0 0 .625em 3px rgba(255,255,255,.6);
+	background-color: #ffffff;
+	color: #039be5;
+}
+
+@media (min-height: 48em) {
+
+	.prices-more {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: center;
+		justify-content: center;
+		margin: 3.75em auto 2.25em;
+		width: 100%;
+	}
+
+}
