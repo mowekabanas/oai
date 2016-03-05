@@ -7,13 +7,7 @@
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
 <link rel="stylesheet" href="dist/css/mowe.css"/>
-<link rel="stylesheet" href="dist/css/oai.min.css"/>
-<!--<link rel="stylesheet" href="css/navbar.css"/>-->
-<!--<link rel="stylesheet" href="css/hero.css"/>-->
-<!--<link rel="stylesheet" href="css/pricelist.css"/>-->
-<!--<link rel="stylesheet" href="css/transition.css"/>-->
-<!--<link rel="stylesheet" href="css/z_oai.css"/>-->
-<!--<link rel="stylesheet" href="css/cities.css"/>-->
+<link rel="stylesheet" href="dist/css/oai.css"/>
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <script src="dist/js/html5shiv.js"></script>
@@ -151,7 +145,7 @@
 					</a>
 				</div>
 				<div class="item font-light-blue-a400">
-					<a href="https://oai.com.br/mail/" class="link link--button">
+					<a id="webmail-button" href="https://oai.com.br/mail/" class="link link--button">
 						<strong>Webmail</strong>
 					</a>
 				</div>
@@ -199,7 +193,7 @@
 
 				<span class="horizontal-bar"></span>
 
-				<p>A operadora original, autêntica e interativa</p>
+				<p class="">A operadora original, autêntica e interativa</p>
 
 			</div>
 
@@ -218,13 +212,29 @@
 
 </div>
 
-<div id="sobre" class="container">
+<div class="WebmailScreen">
 
-	<div class="text">
+	<div class="WebmailScreen-inner light-blue-a100"></div>
+
+</div>
+
+<div id="sobre" class="text grey-100">
+
+	<div class="text-background text-background--intro">
+
+		<div class="text-background-wrapper">
+
+			<img src="img/map_flat.png" alt="" />
+
+		</div>
+
+	</div>
+
+	<div class="container">
 
 		<div class="text-intro">
 
-			<h2>O que vêm a sua cabeça quando você ouve a palavra Internet ?</h2>
+			<h2 class="font-light-blue-a700">O que vêm a sua cabeça quando você ouve a palavra Internet ?</h2>
 
 			<p>Para muitos, informação, para outros, trabalho, diversão, cultura e conhecimento. Para nós da OAI, a internet aproxima as pessoas, como nenhum outro meio de COMUNICAÇÃO, derrubando fronteiras e barreiras, com a liberdade de criar, se expressar e aparecer para o mundo, revelando maravilhas em pessoas comuns.</p>
 
@@ -238,13 +248,13 @@
 
 <span class="full-wide bg-cover photo"></span>
 
-<div class="container">
+<div class="text">
 
-	<div class="text">
+	<div class="container">
 
 		<div class="text-history">
 
-			<h2>Nossa história</h2>
+			<h2 class="font-light-blue-a700">Nossa história</h2>
 
 			<p>Fundada em 2004, a OAI atende a milhares de clientes em todo o Brasil, fornecendo serviços ao mercado residencial e corporativo, com um atendimento exclusivo e tecnologia de ponta. Com constantes investimentos, a OAI amplia suas fronteiras a cada dia. Contamos com uma infra-estrutura própria, provendo acesso à Internet rápida via Rádio nas cidades de Assis, Echaporã e Oscar Bressane no estado de São Paulo e ADSL para todo o Brasil.</p>
 
@@ -374,7 +384,7 @@
 
 <article id="cities-block" class="CitiesBlock">
 
-	<h2>Cidades Atendidas</h2>
+	<h2 class="font-light-blue-a700">Cidades Atendidas</h2>
 
 	<p>A OAI possui infra estrutura de ponta em várias cidades da região.<br/> Confira quais são elas:</p>
 
@@ -548,6 +558,20 @@
 		<span class="copyright">Desenvolvimento</span>
 	</div>
 </footer>
+
+<script>
+
+	var webmailButton = document.getElementById('webmail-button');
+
+	webmailButton.addEventListener('click', function(ev) {
+
+		ev.preventDefault();
+
+		alert('hehe');
+
+	}, false);
+
+</script>
 
 <script>
 

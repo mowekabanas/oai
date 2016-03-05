@@ -16,12 +16,15 @@ gulp.task('oai', function() {
 	gulp.src(cssfiles)
 		.pipe(concat('oai.css'))
 		.pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('minifyCss', function () {
 	gulp.src('dist/css/oai.css')
-			.pipe(minifycss())
-			.pipe(rename({
-				extname: '.min.css'
-			}))
-			.pipe(gulp.dest('dist/css'));
+		.pipe(minifycss())
+		.pipe(rename({
+			extname: '.min.css'
+		}))
+		.pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('js', function() {
@@ -45,9 +48,8 @@ gulp.task('tinypng', function () {
 		.pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('default', function() {
-	var css = ['villa', 'mowe', 'oai'];
-	var js = ['js'];
-	gulp.watch(cssfiles, css);
-	gulp.watch(jsfiles, ['js']);
+gulp.task('watch', function () {
+	gulp.watch(cssfiles, ['oai']);
 });
+
+gulp.task('default', ['watch']);
