@@ -33,8 +33,9 @@
 	function initialize() {
 		var mapOptions = {
 			center: centerPos,
-			zoom: zoomLevel,
-			scrollwheel: false
+			scrollwheel: false,
+			streetViewControl: false,
+			zoom: zoomLevel
 		};
 
 		map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
@@ -56,10 +57,10 @@
 
 		for (i = 0; i < locations.length; i++) {
 			marker = new google.maps.Marker({
-				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-				title: locations[i][0],
+				icon: image,
 				map: map,
-				icon: image
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				title: locations[i][0]
 			});
 		}
 
