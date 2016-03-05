@@ -33,9 +33,10 @@
 	function initialize() {
 		var mapOptions = {
 			center: centerPos,
+			disableDefaultUI: true,
 			scrollwheel: false,
-			streetViewControl: false,
-			zoom: zoomLevel
+			zoom: zoomLevel,
+			zoomControl: true
 		};
 
 		map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
@@ -70,12 +71,6 @@
 
 	}
 	google.maps.event.addDomListener(window, 'load', initialize);
-
-	setTimeout(function() {
-
-		map.setCenter(new google.maps.LatLng(-22.689642,-50.362541));
-
-	}, 3000)
 
 </script>
 
