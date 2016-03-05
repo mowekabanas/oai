@@ -227,7 +227,7 @@
 
 		<div class="text-intro">
 
-			<h2 class="font-light-blue-a700">O que vêm a sua cabeça quando você ouve a palavra Internet ?</h2>
+			<h2 class="font-light-blue-a700">O que vem à sua cabeça quando você ouve a palavra Internet ?</h2>
 
 			<p>Para muitos, informação, para outros, trabalho, diversão, cultura e conhecimento. Para nós da OAI, a internet aproxima as pessoas, como nenhum outro meio de COMUNICAÇÃO, derrubando fronteiras e barreiras, com a liberdade de criar, se expressar e aparecer para o mundo, revelando maravilhas em pessoas comuns.</p>
 
@@ -249,7 +249,7 @@
 
 			<h2 class="font-light-blue-a700">Nossa história</h2>
 
-			<p>Fundada em 2004, a OAI atende a milhares de clientes em todo o Brasil, fornecendo serviços ao mercado residencial e corporativo, com um atendimento exclusivo e tecnologia de ponta. Com constantes investimentos, a OAI amplia suas fronteiras a cada dia. Contamos com uma infra-estrutura própria, provendo acesso à Internet rápida via Rádio nas cidades de Assis, Echaporã e Oscar Bressane no estado de São Paulo e ADSL para todo o Brasil.</p>
+			<p>Fundada em 2004, a OAI atende a milhares de clientes em todo o Brasil, fornecendo serviços ao mercado residencial e corporativo, com um atendimento exclusivo e tecnologia de ponta. Com constantes investimentos, a OAI amplia suas fronteiras a cada dia. Contamos com uma infraestrutura própria, provendo acesso à Internet rápida via Rádio nas cidades de Assis, Echaporã e Oscar Bressane no estado de São Paulo e ADSL para todo o Brasil.</p>
 
 			<p>Chegamos então à era da velocidade da luz, graças à implantação das redes de fibra óptica que chegam a cada endereço para oferecer o melhor serviço e garantir a velocidade ideal e necessária a cada cliente.</p>
 
@@ -375,7 +375,7 @@
 
 </div>
 
-<article id="cities-block" class="CitiesBlock grey-100">
+<article id="cities-block" class="CitiesBlock grey-100 font-grey-800">
 
 	<h2 class="font-light-blue-a700">Cidades Atendidas</h2>
 
@@ -546,7 +546,7 @@
 	<div class="divisor"></div>
 	<div class="about flex flex-column align-center">
 		<a href="//kabanas.info">
-			<img src="dist/img/footer-dev-inverse.png" alt="Mowe & Kabana's Info"/>
+			<img src="dist/img/footer-dev-inverse.png" alt="Kabana's Info & Mowe"/>
 		</a>
 		<span class="copyright">Desenvolvimento</span>
 	</div>
@@ -572,6 +572,8 @@
 
 			if (lat && lng)
 				map.setCenter(new google.maps.LatLng({lat: lat, lng: lng}));
+
+			map.setZoom(zoomLevel);
 
 		});
 
