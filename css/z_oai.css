@@ -379,6 +379,7 @@
 }
 
 .text-intro {
+	background-color: red ;
 	margin: 4.5em 0;
 	max-width: 36em;
 	padding: 1em 0;
