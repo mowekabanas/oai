@@ -82,7 +82,7 @@
 }
 
 .Cities:hover .CitiesList {
-	background-color: rgba(245,245,245,.6);
+	background-color: rgba(245,245,245,.48);
 }
 
 .CitiesList h1,

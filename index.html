@@ -17,11 +17,20 @@
 
 <script>
 
-	setTimeout(function() {
+	var heroBackground = document.createElement('img');
+	heroBackground.src = 'dist/img/photo-1452457750107-cd084dce177d.jpeg';
 
-		document.documentElement.classList.remove('is-loading');
+	heroBackground.addEventListener('load', function () {
 
-	}, 1400);
+		setTimeout(function() {
+
+			document.documentElement.classList.remove('is-loading');
+
+		}, 600);
+
+	});
+
+
 
 </script>
 
@@ -56,14 +65,15 @@
 
 		var image = 'img/icon.png';
 
-		for (i = 0; i < locations.length; i++) {
-			marker = new google.maps.Marker({
+		var markers = [];
+
+		for (i = locations.length; i--; )
+			markers.push(new google.maps.Marker({
 				icon: image,
 				map: map,
 				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 				title: locations[i][0]
-			});
-		}
+			}));
 
 		var style = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f5f5f5"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#03a9f4"},{"visibility":"on"}]}];
 
