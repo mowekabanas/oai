@@ -1,10 +1,45 @@
 var gulp = require('gulp'),
-		concat = require('gulp-concat-css'),
-		jshint = require('gulp-jshint'),
-		minifycss = require('gulp-minify-css'),
-		rename = require('gulp-rename'),
-		uglify = require('gulp-uglify'),
-		tinypng = require('gulp-tinypng');
+	concat = require('gulp-concat-css'),
+	jshint = require('gulp-jshint'),
+	minifycss = require('gulp-minify-css'),
+	rename = require('gulp-rename'),
+	uglify = require('gulp-uglify'),
+	imageResize = require('gulp-image-resize'),
+	tinypng = require('gulp-tinypng');
+
+/*
+ * To use the gulp-image-resize, it needs of some dependencies:
+ * https://www.npmjs.com/package/gulp-image-resize
+ *
+ * Or, install:
+ *
+ * Ubuntu:
+ * apt-get install imagemagick
+ * apt-get install graphicsmagick
+ *
+ * Mac:
+ * brew install imagemagick
+ * brew install graphicsmagick
+ *
+ * Windows & others:
+ * http://www.imagemagick.org/script/binary-releases.php
+ * */
+
+var tinypngToken = '8eNoFlUv4wHzam_8GleKHdhH2YFk9xAd';
+
+var dist = {
+	location: 'dist/'
+};
+
+var images = {
+	content: '*.*',
+	location: 'img/'
+};
+
+images.largePhotos = {
+	content: '*.*',
+	location: images.location + 'largePhotos/'
+};
 
 var cssfiles = 'css/*.css',
 	imgfiles = 'img/*',
@@ -42,11 +77,28 @@ gulp.task('js', function() {
 			.pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('tinypng', function () {
-	gulp.src(imgfiles)
-		.pipe(tinypng('8eNoFlUv4wHzam_8GleKHdhH2YFk9xAd'))
-		.pipe(gulp.dest('dist/img'));
+gulp.task('resizeLargePhotos', function () {
+	gulp.src(images.largePhotos.location + images.largePhotos.content)
+		.pipe(imageResize({
+			height : 1080,
+			upscale : false
+		}))
+		.pipe(gulp.dest(dist.location + images.largePhotos.location));
 });
+
+gulp.task('tinyImages', function () {
+	gulp.src(images.location + images.content)
+		.pipe(tinypng(tinypngToken))
+		.pipe(gulp.dest(images.location));
+});
+
+gulp.task('tinyLargePhotos', function () {
+	gulp.src(images.largePhotos.location + images.largePhotos.content)
+		.pipe(tinypng(tinypngToken))
+		.pipe(gulp.dest(images.largePhotos.location));
+});
+
+gulp.task('tiny', ['tinyImages', 'tinyLargePhotos']);
 
 gulp.task('watch', function () {
 	gulp.watch(cssfiles, ['oai']);
