@@ -25,7 +25,7 @@ var gulp = require('gulp'),
  * http://www.imagemagick.org/script/binary-releases.php
  * */
 
-var tinypngToken = '8eNoFlUv4wHzam_8GleKHdhH2YFk9xAd';
+var tinypngToken = 'hHrU0V0DGG3tNna6R1sqNNOqqU-x1S4u';
 
 var dist = {
 	location: 'dist/'
