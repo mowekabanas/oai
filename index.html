@@ -703,17 +703,22 @@
 	<style scoped="scoped">
 
 		.office-hours {
-			max-width: 24em;
+			max-width: 36em;
 			width: 100%;
 		}
 
 		.office-hours .office-hour {
-			border: solid 2px #00bfa5;
+			border: solid 2px #039be5;
 			border-radius: 8px;
 			padding: 1em;
 			margin: 1em 0;
+			min-width: 12em;
 			text-align: center;
 			cursor: pointer;
+		}
+
+		.office-hours .office-hour:hover {
+			background-color: #039be5;
 		}
 
 		.office-hours .office-hour span {
@@ -728,11 +733,11 @@
 	</style>
 
 	<div class="office-hours flex width-100 justify-around flex-wrap">
-		<div class="office-hour flex flex-column align-center hfont-white h-teal-a700">
+		<div class="office-hour flex flex-column align-center hfont-white">
 			<span class="days">Seg/Sex</span>
 			<span class="hour">08:00 até 18:00</span>
 		</div>
-		<div class="office-hour flex flex-column align-center hfont-white h-teal-a700">
+		<div class="office-hour flex flex-column align-center hfont-white">
 			<span class="days">Sábado</span>
 			<span class="hour">08:00 até 13:00</span>
 		</div>
