@@ -724,6 +724,237 @@
 
 </style>
 
+
+<style>
+
+
+	.form {
+		padding: 1.5em;
+		width: 100%;
+	}
+
+	.form-wrapper {
+		width: 50%;
+	}
+
+	.name-wrapper, .email-wrapper, .message-wrapper {
+
+		padding: 1em 0;
+
+	}
+
+
+	.form ::-webkit-input-placeholder {
+		color: #607d8b;
+	}
+
+	.form :-moz-placeholder {
+		color: #607d8b;
+	}
+
+	.form ::-moz-placeholder {
+		color: #607d8b;
+	}
+
+	.form :focus::-webkit-input-placeholder {
+		color: #b0bec5;
+	}
+
+	.form :focus:-moz-placeholder {
+		color: #b0bec5;
+	}
+
+	.form :focus::-moz-placeholder {
+		color: #b0bec5;
+	}
+
+	.personal-info input,
+	.personal-info label,
+	.form textarea {
+		color: #4e342e;
+		border: none;
+		background: none;
+		width: 100%;
+		text-align: left;
+	}
+
+	.personal-info input,
+	.form textarea {
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-bottom-color: #e0e0e0;
+		margin: 1px 0 .5em;
+		order: 2;
+		-webkit-transition: background .3s;
+		-moz-transition: background .3s;
+		-ms-transition: background .3s;
+		-o-transition: background .3s;
+		transition: background .3s;
+	}
+
+	.personal-info input:focus,
+	.form textarea:focus {
+		border-bottom-width: 2px;
+		border-bottom-color: #00bfa5;
+		margin-top: 0;
+	}
+
+	.personal-info input {
+		font-size: 1em;
+		line-height: 1;
+		padding: 1em 0 .5em;
+	}
+
+	.form-field--name input {
+		font-weight: 500;
+	}
+
+	.form label {
+		color: #00bfa5;
+		display: none;
+		font-size: .75em;
+		padding: 1.333333333em 0 0;
+	}
+
+	.form textarea + label {
+		order: 1;
+		display: block;
+	}
+
+	.form textarea:focus + label {
+		color: #00bfa5;
+	}
+
+	.form textarea {
+		font-size: 1em;
+		line-height: 1.5;
+		min-height: 4em;
+		min-width: 100%;
+		padding: .5em 0;
+	}
+
+	.btn-style {
+		background-color: transparent;
+		border: none;
+		color: #424242;
+		padding: 1.5em;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: .75em;
+	}
+
+	.btn-style:hover {
+		background: #bdbdbd;
+		text-decoration: none;
+		color: #FFF;
+		border-radius: 3%;
+	}
+
+
+	@media (min-width: 72em) {
+		.form textarea {
+			font-size: 1em;
+			line-height: 1.5;
+			min-height: 6em;
+			min-width: 100%;
+			padding: .5em 0;
+		}
+
+	}
+
+	@media (max-width: 36em) {
+		.personal-info input {
+			font-size: .75em;
+		}
+
+	}
+
+	#contacts {
+
+	}
+
+	#contacts h1 {
+		font-size: 4.5em;
+		font-weight: 400;
+		margin: 1.3125em .5em .375em .5em;
+		line-height: 1;
+		text-align: center;
+
+	}
+
+</style>
+
+<h1>Fale com a OAI</h1>
+
+<div class="contacts-wrapper flex flex-wrap">
+
+	<div class="form flex justify-center">
+		<div class="form-wrapper flex flex-column">
+			<div class="personal-info flex flex-column">
+				<div class="name-wrapper flex justify-start">
+					<label class="name" for="cNome">Nome: </label>
+					<input class="name-text" type="text" size="26" name="tNome" id="cNome" maxlength="50"
+						   placeholder="Nome Completo" required
+						   title="Ops, o campo nome deve ser preenchido corretamente :)"
+						   x-moz-errormessage="Ops, o campo nome deve ser preenchido corretamente :)"/>
+				</div>
+
+				<div class="name-wrapper flex justify-start">
+					<label class="phone" for="cPhone">Nome: </label>
+					<input class="phone-text" type="text" size="13" name="tPhone" id="cPhone" maxlength="50"
+						   placeholder="Telefone" required
+						   title="Ops, o campo telefone deve ser preenchido corretamente :)"
+						   x-moz-errormessage="Ops, o campo telefone deve ser preenchido corretamente :)"/>
+				</div>
+
+				<div class="email-wrapper flex justify-start">
+					<label class="email" for="cEmail">Email: </label>
+					<input class="email-text" type="email" size="26" name="tEmail" id="cEmail" maxlength="60"
+						   placeholder="Email" required
+						   title="EX: seunome@gmail.com"
+						   x-moz-errormessage="EX: seunome@gmail.com"/>
+				</div>
+
+				<div class="name-wrapper flex justify-start">
+					<label class="address" for="cAddress">Nome: </label>
+					<input class="address-text" type="text" size="40" name="tAddress" id="cAddress" maxlength="40"
+						   placeholder="Endereço Completo" required
+						   title="Ops, o campo deve ser preenchido corretamente :)"
+						   x-moz-errormessage="Ops, o campo deve ser preenchido corretamente :)"/>
+				</div>
+
+				<div class="name-wrapper flex justify-start">
+					<label class="city" for="cCity">Nome: </label>
+					<input class="city-text" type="text" size="20" name="tCity" id="cCity" maxlength="30"
+						   placeholder="Cidade" required
+						   title="Ops, o campo cidade deve ser preenchido corretamente :)"
+						   x-moz-errormessage="Ops, o campo cidade deve ser preenchido corretamente :)"/>
+				</div>
+
+			</div>
+
+			<div class="message">
+
+				<div class="message-wrapper flex justify-start">
+					<label class="text-message" for="cMensagem"> Mensagem: </label>
+					<textarea class="lato" name="tMensagem" id="cMensagem" cols="36" required
+							  placeholder="Digite a sua mensagem"
+							  title="Ops, o campo mensagem deve ser preenchido corretamente :)"
+							  x-moz-errormessage="Ops, o campo mensagem deve ser preenchido corretamente :)"></textarea>
+				</div>
+			</div>
+			<div class="button flex justify-end">
+				<div class="btn-wrapper">
+					<input class="btn-style" name="ir" type="submit" value="ENVIAR"/>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
 <footer class="block flex justify-around flex-wrap grey-900 font-grey-600 border-grey-600">
 	<div class="about flex flex-column align-center">
 		<span class="address"></span>
