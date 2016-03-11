@@ -81,7 +81,7 @@ gulp.task('js', function() {
 gulp.task('resizeLargePhotos', function () {
 	gulp.src(images.largePhotos.location + images.largePhotos.content)
 		.pipe(imageResize({
-			height : 1080,
+			height : 960,
 			upscale : false
 		}))
 		.pipe(gulp.dest(dist.location + images.largePhotos.location));
