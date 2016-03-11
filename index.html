@@ -7,7 +7,7 @@
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
 <link rel="stylesheet" href="dist/css/mowe.css"/>
-<link rel="stylesheet" href="dist/css/oai.css"/>
+<link rel="stylesheet" href="dist/css/oai.min.css"/>
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <script src="dist/js/html5shiv.js"></script>
@@ -32,53 +32,53 @@
 
 </script>
 
-<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script type="text/javascript">
-//	var map;
-//	var centerPos = new google.maps.LatLng(-22.689642,-50.302541);
-//	var zoomLevel = 11;
-//	function initialize() {
-//		var mapOptions = {
-//			center: centerPos,
-//			disableDefaultUI: true,
-//			scrollwheel: false,
-//			zoom: zoomLevel,
-//			zoomControl: true
-//		};
-//
-//		map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
-//
-//		var locations = [
-//			['assis', -22.661807,-50.4026562],
-//			['cnp', -22.6074217,-50.0168386],
-//			['cmota', -22.7444256,-50.4203003],
-//			['echapora', -22.4296452,-50.2227159],
-//			['ibirarema', -22.8148214,-50.0869049],
-//			['nsparecida', -22.9683604,-50.268502],
-//			['nalexandria', -22.6985332,-50.3090133],
-//			['obressane', -22.3153487,-50.2991],
-//			['palmital', -22.7884344,-50.2516319],
-//			['platina', -22.6324697,-50.2223892]
-//		];
-//
-//		var image = 'img/icon.png';
-//
-//		var markers = [];
-//
-//		for (i = locations.length; i--; )
-//			markers.push(new google.maps.Marker({
-//				icon: image,
-//				map: map,
-//				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-//				title: locations[i][0]
-//			}));
-//
-//		var style = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f5f5f5"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#03a9f4"},{"visibility":"on"}]}];
-//
-//		map.setOptions({styles: style});
-//
-//	}
-//	google.maps.event.addDomListener(window, 'load', initialize);
+	var map;
+	var centerPos = new google.maps.LatLng(-22.689642,-50.302541);
+	var zoomLevel = 11;
+	function initialize() {
+		var mapOptions = {
+			center: centerPos,
+			disableDefaultUI: true,
+			scrollwheel: false,
+			zoom: zoomLevel,
+			zoomControl: true
+		};
+
+		map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
+
+		var locations = [
+			['assis', -22.661807,-50.4026562],
+			['cnp', -22.6074217,-50.0168386],
+			['cmota', -22.7444256,-50.4203003],
+			['echapora', -22.4296452,-50.2227159],
+			['ibirarema', -22.8148214,-50.0869049],
+			['nsparecida', -22.9683604,-50.268502],
+			['nalexandria', -22.6985332,-50.3090133],
+			['obressane', -22.3153487,-50.2991],
+			['palmital', -22.7884344,-50.2516319],
+			['platina', -22.6324697,-50.2223892]
+		];
+
+		var image = 'img/icon.png';
+
+		var markers = [];
+
+		for (i = locations.length; i--; )
+			markers.push(new google.maps.Marker({
+				icon: image,
+				map: map,
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				title: locations[i][0]
+			}));
+
+		var style = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f5f5f5"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#03a9f4"},{"visibility":"on"}]}];
+
+		map.setOptions({styles: style});
+
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 
@@ -515,13 +515,13 @@
 
 </div>
 
-<article id="cities-block" class="CitiesBlock Block grey-100 font-grey-800">
+<article id="cidades" class="CitiesBlock Block grey-100 font-grey-800">
 
 	<h2 class="font-light-blue-a700">Cidades Atendidas</h2>
 
 	<p>A OAI possui infra estrutura de ponta em várias cidades da região.<br/> Confira quais são elas:</p>
 
-	<div id="cidades" class="Cities">
+	<div id="cities+" class="Cities">
 
 		<div class="Cities-background">
 
@@ -683,7 +683,7 @@
 
 </article>
 
-<div id="contact" class="Contact Block grey-50 font-grey-800 flex align-center flex-column">
+<div id="contato" class="Contact Block grey-50 font-grey-800 flex align-center flex-column">
 
 	<h2 class="font-light-blue-a700">Entre em contato</h2>
 
