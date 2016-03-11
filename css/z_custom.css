@@ -359,7 +359,7 @@
 
 .text {
 	padding: 4.5em 0 3em;
-	float: left;
+	/*float: left;*/
 	position: relative;
 	overflow-x: hidden;
 	text-align: left;
@@ -418,21 +418,6 @@
 	position: relative;
 }
 
-.text h2 {
-	display: block;
-	font-size: 3.75em;
-	font-weight: 400;
-	margin-bottom: .75em;
-	line-height: 1.36;
-}
-
-.text p {
-	font-size: 1.3125em;
-	font-weight: 300;
-	line-height: 1.6;
-	margin-bottom: 2.25em;
-}
-
 .text-intro {
 	max-width: 36em;
 }
@@ -459,7 +444,7 @@ body > footer .divisor {
 	}
 }
 
-
+/* Services */
 
 .services h1 {
 	text-align: left;
@@ -504,33 +489,6 @@ body > footer .divisor {
 	#prices .config {
 		margin: 0 16px 1em;
 	}
-}
-
-.services .blog {
-	/*-webkit-align-items: center;
-	align-items: center;
-	display: -webkit-box;      /!* OLD - iOS 6-, Safari 3.1-6 *!/
-	display: -moz-box;         /!* OLD - Firefox 19- (buggy but mostly works) *!/
-	display: -ms-flexbox;      /!* TWEENER - IE 10 *!/
-	display: -webkit-flex;     /!* NEW - Chrome *!/
-	display: flex;
-	flex-direction: column;
-	flex-flow: column;
-	flex-wrap: nowrap;*/
-}
-
-.services .blog * {
-	max-width: 800px;
-	width: 100%;
-}
-
-.services .full-wide {
-	max-width: none;
-	margin-bottom: 1.5em;
-}
-
-.services .photo {
-	margin-bottom: 2em;
 }
 
 #about .photo {

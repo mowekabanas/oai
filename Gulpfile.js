@@ -5,7 +5,8 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
 	imageResize = require('gulp-image-resize'),
-	tinypng = require('gulp-tinypng');
+	tinypng = require('gulp-tinypng'),
+	browserSync = require('browser-sync').create();
 
 /*
  * To use the gulp-image-resize, it needs of some dependencies:
@@ -104,4 +105,23 @@ gulp.task('watch', function () {
 	gulp.watch(cssfiles, ['oai']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('oai-watch', ['oai'], function () {
+	browserSync.reload();
+});
+
+// Watch scss AND html files, doing different things with each.
+gulp.task('serve', ['oai'], function () {
+
+	// Serve files from the root of this project
+	browserSync.init({
+		server: {
+			baseDir: "./"
+		}
+	});
+
+	gulp.watch(cssfiles, ['oai-watch']);
+	gulp.watch("*.html").on("change", browserSync.reload);
+
+});
+
+gulp.task('default', ['serve']);

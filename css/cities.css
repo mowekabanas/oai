@@ -2,8 +2,6 @@
 /* Cities Block */
 
 .CitiesBlock {
-	display: block;
-	float: left;
 	min-height: 100vh;
 	padding: 4.5em 0;
 	width: 100%;
@@ -16,25 +14,9 @@
 	text-align: center;
 }
 
-.CitiesBlock h2 {
-	font-size: 4.5em;
-	font-weight: 400;
-	line-height: 1.25;
-	margin-bottom: .5em;
-}
-
 .CitiesBlock h3 {
-	font-size: 3em;
+	/*font-size: 3em;*/
 	font-weight: 300;
-	line-height: 1.25;
-	margin-bottom: .875em;
-}
-
-.CitiesBlock p {
-	font-size: 1.5em;
-	font-weight: 300;
-	line-height: 1.375;
-	margin-bottom: 2.25em;
 }
 
 /* Cities */
@@ -188,7 +170,7 @@
 
 .OfficeItem p {
 	font-size: 1em;
-	line-height: 1.36;
+	line-height: 1.48;
 	margin-bottom: 1.125em;
 }
 

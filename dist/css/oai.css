@@ -1,10 +1,14 @@
+/* Mowe Block */
+
+.Block {
+  min-height: 100vh;
+  width: 100%;
+}
 /* Cities Block */
 
 .CitiesBlock {
-  display: block;
-  float: left;
   min-height: 100vh;
-  padding: 3em 0;
+  padding: 4.5em 0;
   width: 100%;
 }
 
@@ -15,25 +19,9 @@
   text-align: center;
 }
 
-.CitiesBlock h2 {
-  font-size: 4.5em;
-  font-weight: 400;
-  line-height: 1.25;
-  margin-bottom: .5em;
-}
-
 .CitiesBlock h3 {
-  font-size: 3em;
+  /*font-size: 3em;*/
   font-weight: 300;
-  line-height: 1.25;
-  margin-bottom: .875em;
-}
-
-.CitiesBlock p {
-  font-size: 1.5em;
-  font-weight: 300;
-  line-height: 1.375;
-  margin-bottom: 2.25em;
 }
 
 /* Cities */
@@ -72,7 +60,7 @@
 /* Cities List */
 
 .CitiesList {
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(245,245,245,1);
   -webkit-transition: background .3s;
   -moz-transition: background .3s;
   -ms-transition: background .3s;
@@ -80,8 +68,8 @@
   transition: background .3s;
 }
 
-.CitiesList:hover {
-  background-color: rgba(255,255,255,.72);
+.Cities:hover .CitiesList {
+  background-color: rgba(245,245,245,.48);
 }
 
 .CitiesList h1,
@@ -123,8 +111,10 @@
   cursor: default;
   -webkit-align-items: center;
   align-items: center;
+  background-color: #f5f5f5;
   border: solid 1px #039be5;
   border-radius: 3px;
+  color: #039be5;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -136,7 +126,6 @@
 }
 
 .CitiesItem-select-area:hover {
-  border: solid 1px #039be5;
   background-color: #039be5;
   color: #ffffff;
 }
@@ -157,6 +146,8 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
@@ -173,7 +164,7 @@
   flex-flow: column;
   width: 16em;
   min-height: 8em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .OfficeItem h4 {
@@ -184,7 +175,7 @@
 
 .OfficeItem p {
   font-size: 1em;
-  line-height: 1.36;
+  line-height: 1.48;
   margin-bottom: 1.125em;
 }
 
@@ -228,6 +219,555 @@
   flex-flow: column;
 }
 
+.OfficeItemTimetable p {
+  color: #757575;
+  font-size: .875em;
+  line-height: 1.48;
+  margin: 0;
+}
+/* Contact Form */
+
+.ContactForm {
+  max-width: 800px;
+  width: 100%;
+  padding: 1em 0 0;
+}
+
+/* Contact Form Block*/
+
+.ConcatFormBlock {
+  padding: 4.5em 0;
+}
+
+/* Form Title */
+
+.ContactForm-title {
+  font-size: 1em;
+  width: 100%;
+  padding: 0 3.75em;
+  margin: 1em 0 .5em;
+}
+
+.ContactForm-title span {
+  color: #4e342e;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+/* Form Wrapper and Field */
+
+.ContactForm-wrapper,
+.ContactForm-field {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.ContactForm-wrapper {
+  padding: 0 1em;
+  width: 100%;
+}
+
+/* Form Field */
+
+.ContactForm-field {
+  padding: 0 1.5em;
+  width: 100%;
+}
+
+.ContactForm-field--submit {
+  padding: 0;
+}
+
+.ContactForm-field ::-webkit-input-placeholder {
+  color: #607d8b;
+}
+
+.ContactForm-field :-moz-placeholder {
+  color: #607d8b;
+}
+
+.ContactForm-field ::-moz-placeholder {
+  color: #607d8b;
+}
+
+.ContactForm-field :focus::-webkit-input-placeholder {
+  color: #b0bec5;
+}
+
+.ContactForm-field :focus:-moz-placeholder {
+  color: #b0bec5;
+}
+
+.ContactForm-field :focus::-moz-placeholder {
+  color: #b0bec5;
+}
+
+.ContactForm-field input,
+.ContactForm-field label,
+.ContactForm-field textarea {
+  color: #4e342e;
+  border: none;
+  background: none;
+  width: 100%;
+}
+
+.ContactForm-field input,
+.ContactForm-field textarea {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #e0e0e0;
+  margin: 1px 0 .5em;
+  order: 2;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  -ms-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
+}
+
+.ContactForm-field input:focus,
+.ContactForm-field textarea:focus {
+  border-bottom-width: 2px;
+  border-bottom-color: #00b8d4;
+  margin-top: 0;
+}
+
+.ContactForm-field input:invalid,
+.ContactForm-field textarea:invalid {
+  border-bottom-width: 2px;
+  border-bottom-color: red;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.ContactForm-field input {
+  font-size: 1em;
+  line-height: 1;
+  padding: 1em 0 .5em;
+}
+
+.ContactForm-field--name input {
+  font-weight: 500;
+}
+
+.ContactForm-field label {
+  color: #00b8d4;
+  display: none;
+  font-size: .75em;
+  padding: 1.333333333em 0 0;
+}
+
+.ContactForm-field textarea + label {
+  order: 1;
+  display: block;
+}
+
+.ContactForm-field textarea:focus + label {
+  color: #00b8d4;
+}
+
+.ContactForm-field textarea {
+  font-size: 1em;
+  line-height: 1.5;
+  min-height: 4em;
+  min-width: 100%;
+  padding: .5em 0;
+}
+
+.ContactForm-field .ContactForm-submit {
+  color: #00b8d4;
+  cursor: pointer;
+  border: none;
+  padding: .625em .5em;
+  margin: .5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 6em;
+}
+
+.ContactForm-field .ContactForm-submit:hover,
+.ContactForm-field .ContactForm-submit:focus {
+  background-color: #e0e0e0;
+  margin: .5em;
+}
+
+@media (min-width: 72em) {
+  .ContactForm-field textarea {
+    font-size: 1em;
+    line-height: 1.5;
+    min-height: 6em;
+    min-width: 100%;
+    padding: .5em 0;
+  }
+}
+
+@media (min-width: 36em) {
+  .ContactForm-wrapper {
+    padding: 0 2.25em;
+    width: 100%;
+  }
+}
+/* Contact Phone */
+
+.ContactPhone {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  width: 100%;
+}
+
+/* Contact Phone list */
+
+/* Contact Phone Item */
+
+.ContactPhoneItem {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 0 1em;
+}
+
+/* Contact Phone Item header */
+
+.ContactPhoneItem-header {
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #1e88e5;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  color: #ffffff;
+  cursor: default;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 6em;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 6em;
+}
+
+.ContactPhoneItem:hover .ContactPhoneItem-header {
+  background-color: #2196f3;
+}
+
+.ContactPhoneItem-header span {
+  font-size: 1.5em;
+}
+
+/* Contact Phone Item content */
+
+.ContactPhoneItem-content {
+  color: #616161;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  background-color: #eeeeee;
+  padding: 0 0 0 1.5em;
+  height: 6em;
+  width: 24em;
+}
+
+.ContactPhoneItem-number {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.48;
+}
+/* Contact */
+
+.Contact {
+  padding: 4.5em 0;
+}
+
+/* Contact Methods */
+
+.ContactMethods h3 {
+  color: #424242;
+  font-size: 3em;
+  margin: 0 0 .625em;
+}
+
+/* Contact Methods Nav */
+
+.ContactMethodsNav {
+  display: block;
+  width: 100%;
+  max-width: 60em;
+}
+
+.ContactMethodsNav-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+/* Contact Methods Nav Item */
+
+.ContactMethodsNavItem {
+  margin: 0 0 1em;
+  min-width: 14em;
+}
+
+/* Contact Nav Item select area */
+
+.ContactMethodsNavItem-select-area {
+  -webkit-align-items: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  padding: 1.5em 0 1.3125em;
+  width: 100%;
+}
+
+.ContactMethodsNavItem-select-area:hover {
+  background-color: #eeeeee;
+}
+
+/* Contact Nav Item icon */
+
+.ContactMethodsNavItem-icon {
+  -webkit-align-items: center;
+  align-items: center;
+  border: solid 2px #1e88e5;
+  border-radius: 50%;
+  color: #1e88e5;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 3.75em;
+  margin: 0 0 1em;
+  width: 3.75em;
+}
+
+.ContactMethodsNavItem-icon span {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* Contact Nav Item title */
+
+.ContactMethodsNavItem-title {
+  color: #616161;
+  font-size: 1.125em;
+  font-weight: 600;
+}
+
+/* Contact Methods Content */
+
+.ContactMethodsContent {
+  height: 36em;
+  margin: 0 0 3em;
+  max-width: 60em;
+  position: relative;
+  width: 100%;
+}
+
+/* Contact Methods Item */
+
+.ContactMethods-item {
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.ContactMethods-item.is-active {
+  display: block;
+}
+
+/* Contact Methods item themes */
+
+.ContactMethods-item--phone,
+.ContactMethods-item--mobile {
+  padding: 1em 0 0 0;
+}
+
+.ContactMethods-item--email.is-active {
+  -webkit-align-items: center;
+  align-items: center;
+  color: #1e88e5;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 3em;
+  height: 100%;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+}
+/* Dev Footer */
+
+.DevFooter {
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #1565c0;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  height: 4.5em;
+  padding: 0 2.25em;
+  width: 100%;
+}
+
+.DevFooter span {
+  font-size: .75em;
+}
+/* OAI Elements */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  font-weight: 400;
+  margin-bottom: .75em;
+  line-height: 1.36;
+}
+
+h2 {
+  font-size: 4.5em;
+}
+
+h3 {
+  display: block;
+  font-size: 3.75em;
+  font-weight: 400;
+  margin-bottom: .75em;
+  line-height: 1.36;
+}
+
+p {
+  font-size: 1.3125em;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2.25em;
+}
+/* Final Slogan */
+
+.FinalSlogan {
+  margin: 1em 0;
+}
+
+.FinalSlogan-logo {
+  padding: 0 0 .5em;
+}
+
+.FinalSlogan span {
+  font-size: .75em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+/* OAI Footer */
+
+.Footer {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  padding: 4.5em 0 1em;
+}
+
+.Footer a,
+.Footer p {
+  font-size: .875em;
+  font-weight: 400;
+  line-height: 1.48;
+}
+
+/* Footer About */
+
+.FooterAbout {
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 3em;
+  width: 100%;
+  max-width: 60em;
+  padding: 0 1em;
+}
+
+.FooterAbout > * {
+  flex: 1;
+}
+
+/* FooterText */
+
+.FooterText {
+  text-align: right;
+}
+
+.FooterText p {
+  margin: 0 0 .75em;
+}
+
+.FooterText p:last-of-type {
+  margin: 0;
+}
 /*!
  * Mowe Hero v2.0.0 (http://getvilla.org/)
  * Copyright 2013-2015 Noibe Developers
@@ -1023,6 +1563,31 @@
 }
 
 /* '' */
+/* Footer Logo */
+
+.FooterLogo svg {
+  margin-left: -.4px;
+  max-width: 4.5em;
+  width: 100%;
+}
+
+.FooterLogo .OaiLogoSymbol-blue,
+.FooterLogo .OaiLogoSymbol-green {
+  fill: #ffffff;
+  -webkit-transition: fill .3s;
+  -moz-transition: fill .3s;
+  -ms-transition: fill .3s;
+  -o-transition: fill .3s;
+  transition: fill .3s;
+}
+
+.FooterLogo .OaiLogoType {
+  display: none;
+}
+
+.FinalSlogan-select-area:hover .OaiLogoSymbol-green {
+  fill: #CDDC37;
+}
 /*!
  * Mowe Nav v0.8.0 (http://getvilla.org/)
  * Copyright 2013-2015 Noibe Developers
@@ -1163,111 +1728,44 @@ button::-moz-focus-inner {
     align-content: flex-end;
   }
 }
-/*!
- * Mowe Pricelist v1.0.0 (http://getvilla.org/)
- * Copyright 2013-2015 Noibe Developers
- * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
-*/
-
-#prices {
-  min-height: 100vh;
-  padding: 1em 0 1em;
+.PriceListFrame .container {
+  max-width: 72em;
 }
+/* Pricelist Content */
 
-@media (min-height: 36em) {
-  #prices {
-    padding: 2.25em 0 1em;
-  }
-}
-
-@media (min-height: 48em) {
-  #prices {
-    padding: 4.5em 0 1em;
-  }
-}
-
-@media (min-height: 60em) {
-  #prices {
-    padding: 6em 0 1em;
-  }
-}
-
-.slide .nav {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-}
-
-.slide .nav li {
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#prices .nav.pills li {
-  border-radius: 5px;
-}
-
-/* temporary use */
-
-#prices.slide-1 .nav.pills li:nth-child(1),
-#prices.slide-2 .nav.pills li:nth-child(2),
-#prices.slide-3 .nav.pills li:nth-child(3) {
-  border-style: solid;
-}
-
-.slide .nav.pills {
-  justify-content: center;
-  margin: 30px auto 60px;
-}
-
-.slide .nav.pills li {
-  border-width: 1px;
-  margin-left: -1px;
-  min-width: 150px;
-  padding: 15px 30px;
-  text-align: center;
-}
-
-/* TEMPORARY COMMENT */
-
-/*.slide .nav.pills li:first-child {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
-
-.slide .nav.pills li:last-child {
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-}*/
-
-.pricelist {
-  /*font-size: .833333333em;*/
-}
-
-.pricelist .content {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+.PricelistContent {
+  -webkit-align-items: flex-start;
   align-items: flex-start;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
-.pricelist .content li {
-  align-items: center;
+.PricelistContent {
+  display: none;
+}
+
+.Prices.slide-1 .Pricelist:nth-child(1) .PricelistContent,
+.Prices.slide-2 .Pricelist:nth-child(2) .PricelistContent,
+.Prices.slide-3 .Pricelist:nth-child(3) .PricelistContent {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@media (min-width: 60em) {
+  .PricelistContent {
+    flex-wrap: nowrap;
+  }
+}
+/* Pricelist Item */
+
+.PricelistItem {
+  -webkit-align-items: stretch;
+  align-items: stretch;
   border-radius: 8px;
   cursor: default;
   display: -webkit-box;
@@ -1275,49 +1773,98 @@ button::-moz-focus-inner {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: center;
   justify-content: center;
   max-width: 16em;
   padding: 1.5em 1.5em 1em;
   text-align: center;
 }
 
-.pricelist .content li > * {
-  width: 100%;
+.PricelistItem:hover {
+  background-color: #fafafa;
+  color: #424242;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  -ms-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
 }
 
+.Prices.slide-1 .Pricelist:nth-child(1),
+.Prices.slide-2 .Pricelist:nth-child(2),
+.Prices.slide-3 .Pricelist:nth-child(3) {
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+/* Pricelist Item media */
+
 @media (min-width: 48em) {
-  .pricelist .content li {
-    padding: 2.25em 2.25em 1.5em;
+  .PricelistItem {
+    padding: 1.125em 2.25em .875em;
     max-width: 16em;
   }
 }
 
 @media (min-width: 60em) {
-  .pricelist .content {
+  .PricelistContent {
     flex-wrap: nowrap;
   }
 
-  .pricelist .content li {
-    padding: 2.25em 2.25em 1.5em;
+  .PricelistItem {
+    padding: 1.3125em 1.3125em 1em;
     max-width: 16em;
   }
 }
 
 @media (min-width: 72em) {
-  .pricelist .content li {
-    padding: 3em 3em 2.25em;
+  .PricelistItem {
+    padding: 1.5em 1.5em 1.125em;
   }
 }
 
-.pricelist .content li .title {
-  font-size: 1.125em;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+/* Pricelist Item title */
+
+.PricelistItem-title {
+  border-bottom: solid 2px #e0e0e0;
+  margin: 0 0 1.125em;
+  padding: 0 0 1em;
   text-transform: uppercase;
 }
 
-.pricelist .content li .price {
+.PricelistItem-title span {
+  font-size: 1.125em;
+}
+
+.Pricelist.hidden-price .PricelistItem-title span {
+  font-size: 2.25em;
+}
+
+.PricelistItem:hover .PricelistItem-title,
+.PricelistItem.error .PricelistItem-title,
+.PricelistItem.success .PricelistItem-title {
+  border-color: #fafafa;
+}
+
+/* Pricelist Item description */
+
+.PricelistItem-description {
+  color: #e0e0e0;
+  font-size: .875em;
+  margin: 0 0 1em;
+}
+
+.PricelistItem:hover .PricelistItem-description,
+.PricelistItem.error .PricelistItem-description,
+.PricelistItem.success .PricelistItem-description {
+  color: #9e9e9e;
+}
+
+/* OLD CODE */
+
+.PricelistItem .price {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1328,27 +1875,22 @@ button::-moz-focus-inner {
   min-width: 180px;
 }
 
-.pricelist .content li .price .dollar {
+.PricelistItem .price .dollar {
   font-size: 40px;
   align-self: flex-start;
 }
 
-.pricelist .content li .price .number {
+.PricelistItem .price .number {
   font-size: 3.75em;
   line-height: 1em;
   align-self: center;
 }
 
-.pricelist .content li .price .decimal {
+.PricelistItem .price .decimal {
   align-self: flex-end;
 }
 
-.pricelist .content li .description {
-  font-size: 15px;
-  margin: 15px 0;
-}
-
-.pricelist .content li .action {
+.PricelistItem .action {
   background-color: #00bfa5;
   border: none;
   border-radius: 25px;
@@ -1361,13 +1903,7 @@ button::-moz-focus-inner {
   transition: none;
 }
 
-.pricelist .content li:hover {
-  background-color: #fafafa;
-  color: #424242;
-  transition: background .3s linear;
-}
-
-.pricelist .content li input {
+.PricelistItem input {
   background-color: #eeeeee;
   border: solid 2px #00bfa5;
   border-radius: 2px;
@@ -1379,123 +1915,34 @@ button::-moz-focus-inner {
   padding: 8px 12px;
 }
 
-.pricelist .content li:hover .title {
-  border-color: #fafafa;
-}
-
-.pricelist .content li:hover .action {
+.PricelistItem:hover .action {
   opacity: 1;
   transition: none;
 }
 
-.pricelist.hidden-price .content li .title {
-  font-size: 3em;
-}
-
-/* TEMPORARY USE */
-
-#prices .pricelist {
-  opacity: 0;
-  transition: all 1s ease;
-}
-
-#prices .pricelist .content {
-  display: none;
-}
-
-#prices.slide-1 .pricelist:nth-child(1),
-#prices.slide-2 .pricelist:nth-child(2),
-#prices.slide-3 .pricelist:nth-child(3) {
-  opacity: 1;
-  transition: all 1s ease;
-}
-
-#prices.slide-1 .pricelist:nth-child(1) .content,
-#prices.slide-2 .pricelist:nth-child(2) .content,
-#prices.slide-3 .pricelist:nth-child(3) .content {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-/* OAI THEME */
-
-.pricelist .content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
-.pricelist .content li {
-  border-radius: 8px;
-  max-width: 16em;
-  padding: 1.5em 1.125em 1em;
-  text-align: center;
-}
-
-@media (min-width: 48em) {
-  .pricelist .content li {
-    padding: 2.25em 1.5em 1.5em;
-    max-width: 16em;
-  }
-}
-
-@media (min-width: 60em) {
-  .pricelist .content {
-    flex-wrap: nowrap;
-  }
-
-  .pricelist .content li {
-    padding: 2.25em 1.5em 1.5em;
-    max-width: 16em;
-  }
-}
-
-@media (min-width: 72em) {
-  .pricelist .content li {
-    padding: 3em 2.25em 1.5em;
-  }
-}
-
-.pricelist .content li .title {
-  border-bottom: solid 2px #e0e0e0;
-  font-size: 1.125em;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.pricelist .content li .price {
+.PricelistItem .price {
   display: flex;
   flex-direction: row;
   justify-content: center;
   min-width: 180px;
 }
 
-.pricelist .content li .price .dollar {
+.PricelistItem .price .dollar {
   font-size: 40px;
   align-self: flex-start;
 }
 
-.pricelist .content li .price .number {
+.PricelistItem .price .number {
   font-size: 3.75em;
   line-height: 1em;
   align-self: center;
 }
 
-.pricelist .content li .price .decimal {
+.PricelistItem .price .decimal {
   align-self: flex-end;
 }
 
-.pricelist .content li .description {
-  color: #e0e0e0;
-}
-
-.pricelist .content li .action {
+.PricelistItem .action {
   background-color: #e0e0e0;
   border: none;
   border-radius: 25px;
@@ -1508,14 +1955,7 @@ button::-moz-focus-inner {
   transition: none;
 }
 
-.pricelist .content li:hover,
-.pricelist .content li.active {
-  background-color: #fafafa;
-  color: #424242;
-  transition: background .3s linear;
-}
-
-.pricelist .content li input {
+.PricelistItem input {
   background-color: #eee;
   border: 2px solid #00bfa5;
   border-radius: 2px;
@@ -1527,26 +1967,22 @@ button::-moz-focus-inner {
   padding: 8px 12px;
 }
 
-.pricelist.hidden-price .content li .title {
-  font-size: 2.25em;
-}
-
-.pricelist .content li:hover .send {
+.PricelistItem:hover .send {
   opacity: 0;
 }
 
-.pricelist .content li .contact {
+.PricelistItem .contact {
   display: flex;
   flex-direction: column;
 }
 
-.pricelist .content li input,
-.pricelist .content li .response-send {
+.PricelistItem input,
+.PricelistItem .response-send {
   display: none;
 }
 
-.pricelist .content li.active input,
-.pricelist .content li.active .response-send {
+.PricelistItem.active input,
+.PricelistItem.active .response-send {
   display: block;
   border-width: 2px;
   margin-top: 1em;
@@ -1559,7 +1995,7 @@ button::-moz-focus-inner {
   transition: opacity .3s linear .15s;
 }
 
-.pricelist .content li.active .alert {
+.PricelistItem.active .alert {
   height: auto;
   margin: 1em 0 .5em;
   padding: 10px;
@@ -1570,7 +2006,7 @@ button::-moz-focus-inner {
   transition: opacity .4s linear .35s;
 }
 
-.pricelist .content li .alert {
+.PricelistItem .alert {
   font-weight: 400;
   height: 0;
   padding: 0;
@@ -1578,126 +2014,145 @@ button::-moz-focus-inner {
   margin: 0;
 }
 
-.pricelist .content li.success .alert,
-.pricelist .content li.error .alert {
+.PricelistItem.success .alert,
+.PricelistItem.error .alert {
   opacity: 1;
   height: auto;
   margin: 1em 0 .5em;
   padding: 10px;
 }
 
-.pricelist .content li.active .contact-form {
+.PricelistItem.active .contact-form {
   opacity: 1;
 }
 
-.pricelist .content li.active,
-.pricelist .content li.success,
-.pricelist .content li.error {
+.PricelistItem.active,
+.PricelistItem.success,
+.PricelistItem.error {
   color: #424242;
   transition: background .3s linear;
 }
 
-.pricelist .content li.active-form .title {
+.PricelistItem.active-form .PricelistItem-title {
   border-color: #ffffff;
 }
 
-.pricelist .content li.active-form [data-toggle=contact-form] {
+.PricelistItem.active-form [data-toggle=contact-form] {
   opacity: 1;
   background-color: #757575;
   transition: background .3s linear;
 }
 
-.pricelist .content li.success [data-toggle=contact-form],
-.pricelist .content li.success .contact-form,
-.pricelist .content li.error [data-toggle=contact-form],
-.pricelist .content li.error .contact-form {
+.PricelistItem.success [data-toggle=contact-form],
+.PricelistItem.success .contact-form,
+.PricelistItem.error [data-toggle=contact-form],
+.PricelistItem.error .contact-form {
   display: none;
 }
 
-/*
-	Dynamic Transitions
-*/
-
-/* Description */
-
-.pricelist .content li:hover .description,
-.pricelist .content li.error .description,
-.pricelist .content li.success .description {
-  color: #9e9e9e;
-}
-
-/* Price Border Color */
-
-.pricelist .content li:hover .title,
-.pricelist .content li.error .title,
-.pricelist .content li.success .title {
-  border-color: #fafafa;
-}
-
-/* Toggle Form Button */
-
-.pricelist .content li:hover .toggle-contact-form,
-.pricelist .content li.active .toggle-contact-form,
-.pricelist .content li.error .toggle-contact-form,
-.pricelist .content li.success .toggle-contact-form {
+.PricelistItem:hover .toggle-contact-form,
+.PricelistItem.active .toggle-contact-form,
+.PricelistItem.error .toggle-contact-form,
+.PricelistItem.success .toggle-contact-form {
   opacity: 1;
   transition: none;
 }
 
-/*
-	Dynamic Strings
-*/
-
 /* Toggle button */
 
-.pricelist .content li .toggle-contact-form:before {
+.PricelistItem .toggle-contact-form:before {
   content: 'Assine Já!';
 }
 
-.pricelist .content li.request .toggle-contact-form:before {
+.PricelistItem.request .toggle-contact-form:before {
   content: 'Consulta!';
 }
 
-.pricelist .content li.active .toggle-contact-form:before,
-.pricelist .content li.success .toggle-contact-form:before {
+.PricelistItem.active .toggle-contact-form:before,
+.PricelistItem.success .toggle-contact-form:before {
   content: 'Voltar';
 }
 
-.pricelist .content li.error .toggle-contact-form:before {
+.PricelistItem.error .toggle-contact-form:before {
   content: 'Tentar novamente';
 }
 
 /* Submit Button */
 
-.pricelist .content li .response-send:before {
+.PricelistItem .response-send:before {
   content: 'Solicitar Contato';
 }
 
-.pricelist .content li.active.sent .response-send:before {
+.PricelistItem.active.sent .response-send:before {
   content: 'Enviando...';
 }
 
 /* Submit Alert */
 
-.pricelist .content li.error .alert:before {
+.PricelistItem.error .alert:before {
   content: 'Houve algum erro, tente novamente mais tarde!';
 }
 
-.pricelist .content li.success .alert:before {
+.PricelistItem.success .alert:before {
   content: 'Obrigado! Logo entraremos em contato com você!';
 }
 
-.pricelist .content li.error .alert {
+.PricelistItem.error .alert {
   color: #d50000;
 }
 
-.pricelist .content li.success .alert {
+.PricelistItem.success .alert {
   color: #00bfa5;
 }
+/* Priceslist Nav */
 
-/* Prices More */
+.PricelistNav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 30px auto 60px;
+}
 
-.prices-more {
+.PricelistNavItem {
+  border-width: 1px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: -1px;
+  min-width: 10em;
+  padding: 1em 1.5em;
+  text-align: center;
+}
+
+.PricelistNavItem {
+  border-radius: 5px;
+}
+
+/* temporary use */
+
+.Prices.slide-1 .PricelistNavItem:nth-child(1),
+.Prices.slide-2 .PricelistNavItem:nth-child(2),
+.Prices.slide-3 .PricelistNavItem:nth-child(3) {
+  border-style: solid;
+}
+/*!
+ * Mowe Pricelist v1.0.0 (http://getvilla.org/)
+ * Copyright 2013-2015 Noibe Developers
+ * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
+*/
+
+.Pricelist {
+  opacity: 0;
+  transition: all 1s ease;
+}
+/* Prices More button */
+
+.PricesMore {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1709,7 +2164,7 @@ button::-moz-focus-inner {
   width: 100%;
 }
 
-.prices-more-select-area {
+.PricesMore-select-area {
   border-radius: 4px;
   border: solid 1px #ffffff;
   cursor: pointer;
@@ -1717,9 +2172,9 @@ button::-moz-focus-inner {
   padding: 0 1.5em;
 }
 
-.prices-more-select-area:active,
-.prices-more-select-area:focus,
-.prices-more-select-area:hover {
+.PricesMore-select-area:active,
+.PricesMore-select-area:focus,
+.PricesMore-select-area:hover {
   -webkit-box-shadow: 0 0 .625em 3px rgba(255,255,255,.6);
   -moz-box-shadow: 0 0 .625em 3px rgba(255,255,255,.6);
   box-shadow: 0 0 .625em 3px rgba(255,255,255,.6);
@@ -1728,7 +2183,7 @@ button::-moz-focus-inner {
 }
 
 @media (min-height: 48em) {
-  .prices-more {
+  .PricesMore {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -1739,6 +2194,73 @@ button::-moz-focus-inner {
     margin: 3.75em auto 2.25em;
     width: 100%;
   }
+}
+.PricelistSlide {
+  /*background-color: green;*/
+}
+/* Prices */
+
+.Prices {
+  padding: 1em 0;
+}
+
+@media (min-height: 36em) {
+  .Prices {
+    padding: 2.25em 0 1em;
+  }
+}
+
+@media (min-height: 48em) {
+  .Prices {
+    padding: 4.5em 0 1em;
+  }
+}
+
+@media (min-height: 60em) {
+  .Prices {
+    padding: 6em 0 1em;
+  }
+}
+/* Ratify */
+
+.Ratify {
+  text-align: left;
+}
+
+.Ratify img {
+  margin: 0 0 .375em;
+}
+
+.Ratify p {
+  margin: 0;
+}
+/* Social */
+
+.Social {
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin: .75em 0 0;
+}
+
+.SocialItem {
+  position: relative;
+}
+
+.SocialItem:after {
+  content: "·";
+  margin: 0 .5em;
+}
+
+.SocialItem:last-of-type:after {
+  content: "";
+  margin: 0;
 }
 /* INITIAL TRANSITION */
 
@@ -1774,6 +2296,27 @@ html.is-loading .navbar {
   -ms-transition: opacity 1s .4s;
   -o-transition: opacity 1s .4s;
   transition: opacity 1s .4s;
+}
+/* Webmail Screen */
+
+.WebmailScreen {
+  display: none;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  padding: 6em 0 0;
+  top: 0;
+  width: 100%;
+}
+
+.WebmailScreen.is-active {
+  display: block;
+}
+
+.WebmailScreen-inner {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 /*!
  * Mowe Webtal Project v1.0.1 (http://gomowe.org/)
@@ -2115,32 +2658,66 @@ html.is-loading .navbar {
 /* Text */
 
 .text {
+  padding: 4.5em 0 3em;
+  /*float: left;*/
+  position: relative;
+  overflow-x: hidden;
   text-align: left;
+  width: 100%;
 }
 
-.text h2 {
+.text-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.text-background--intro {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  bottom: 0;
+}
+
+.text-background-wrapper {
+  width: 100%;
+}
+
+.text-background--intro .text-background-wrapper {
+  -webkit-transform: translateX(60%);
+  -moz-transform: translateX(60%);
+  -ms-transform: translateX(60%);
+  -o-transform: translateX(60%);
+  transform: translateX(60%);
+}
+
+.text-background img {
   display: block;
-  font-size: 3.75em;
-  font-weight: 400;
-  margin-bottom: .75em;
-  line-height: 1.36;
 }
 
-.text p {
-  font-size: 1.3125em;
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 2.25em;
+.text-background--intro img {
+  max-height: 16em;
+  margin: 0 0 6em;
+}
+
+@media (max-width: 60em) {
+  .text-background {
+    display: none;
+  }
+}
+
+.text .container {
+  position: relative;
 }
 
 .text-intro {
-  margin: 4.5em 0;
   max-width: 36em;
-  padding: 1em 0;
-}
-
-.text-history {
-  margin-bottom: 4.5em;
 }
 
 /*
@@ -2164,6 +2741,8 @@ body > footer .divisor {
     display: none;
   }
 }
+
+/* Services */
 
 .services h1 {
   text-align: left;
@@ -2209,33 +2788,6 @@ body > footer .divisor {
   #prices .config {
     margin: 0 16px 1em;
   }
-}
-
-.services .blog {
-  /*-webkit-align-items: center;
-	align-items: center;
-	display: -webkit-box;      /!* OLD - iOS 6-, Safari 3.1-6 *!/
-	display: -moz-box;         /!* OLD - Firefox 19- (buggy but mostly works) *!/
-	display: -ms-flexbox;      /!* TWEENER - IE 10 *!/
-	display: -webkit-flex;     /!* NEW - Chrome *!/
-	display: flex;
-	flex-direction: column;
-	flex-flow: column;
-	flex-wrap: nowrap;*/
-}
-
-.services .blog * {
-  max-width: 800px;
-  width: 100%;
-}
-
-.services .full-wide {
-  max-width: none;
-  margin-bottom: 1.5em;
-}
-
-.services .photo {
-  margin-bottom: 2em;
 }
 
 #about .photo {
