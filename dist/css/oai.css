@@ -1014,9 +1014,9 @@ p {
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 60em) {
   .welcome {
-    margin: -1em 0 0 -8em;
+    margin: 0 0 0 -2em;
   }
 
   .hero .promo #promo01 p {
