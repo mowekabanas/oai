@@ -255,6 +255,10 @@
 
 @media (min-width: 64em) {
 
+	.welcome {
+		margin: -1em 0 0 -8em;
+	}
+
 	.hero .promo #promo01 p {
 		font-size: 1em;
 	}
