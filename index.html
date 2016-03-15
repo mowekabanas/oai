@@ -555,7 +555,7 @@
 
 					<li class="CitiesItem">
 
-						<a class="CitiesItem-select-area" data-mapLat="-22.6618791" data-mapLng="-50.4175902">Assis, SP</a>
+						<a class="CitiesItem-select-area" data-mapLat="-22.6618791" data-mapLng="-50.4175902" data-mapzoom="14">Assis, SP</a>
 
 					</li>
 
@@ -573,13 +573,13 @@
 
 					<li class="CitiesItem">
 
-						<a class="CitiesItem-select-area" data-mapLat="-22.429305" data-mapLng="-50.2045585">Echaporã, SP</a>
+						<a class="CitiesItem-select-area" data-mapLat="-22.429305" data-mapLng="-50.2045585" data-mapzoom="15">Echaporã, SP</a>
 
 					</li>
 
 					<li class="CitiesItem">
 
-						<a class="CitiesItem-select-area" data-mapLat="-22.8148214" data-mapLng="-50.0745476">Ibirarema, SP</a>
+						<a class="CitiesItem-select-area" data-mapLat="-22.8148214" data-mapLng="-50.0745476" data-mapzoom="14">Ibirarema, SP</a>
 
 					</li>
 
@@ -603,7 +603,7 @@
 
 					<li class="CitiesItem">
 
-						<a class="CitiesItem-select-area" data-mapLat="-22.7858947" data-mapLng="-50.2232455">Palmital, SP</a>
+						<a class="CitiesItem-select-area" data-mapLat="-22.7858947" data-mapLng="-50.2232455" data-mapzoom="15">Palmital, SP</a>
 
 					</li>
 
@@ -1025,15 +1025,15 @@
 						<div class="ContactForm-wrapper ContactForm-wrapper--personal-info flex flex-column">
 
 							<div class="ContactForm-field ContactForm-field--name">
-								<input class="name-text" type="text" size="26" name="tNome" required="required" id="cNome" maxlength="50"
+								<input class="name-text" type="text" size="26" name="tNome" id="cName" maxlength="50"
 								       placeholder="Nome"
 								       title="Ops, o campo nome deve ser preenchido corretamente :)"
 								       x-moz-errormessage="Ops, o campo nome deve ser preenchido corretamente :)"/>
-								<label class="name" for="cNome">Nome</label>
+								<label class="name" for="cName">Nome</label>
 							</div>
 
 							<div class="ContactForm-field ContactForm-field--phone">
-								<input class="phone-text" type="text" size="26" name="tPhone" required="required" id="cPhone" maxlength="14"
+								<input class="phone-text" type="text" size="26" name="tPhone" id="cPhone" maxlength="14"
 								       placeholder="Telefone"
 								       title="Ops, o campo telefone deve ser preenchido corretamente :)"
 								       x-moz-errormessage="Ops, o campo telefone deve ser preenchido corretamente :)"/>
@@ -1041,7 +1041,7 @@
 							</div>
 
 							<div class="ContactForm-field ContactForm-field--email">
-								<input class="email-text" type="email" size="26" name="tEmail" required="required" id="cEmail" maxlength="60"
+								<input class="email-text" type="email" size="26" name="tEmail" id="cEmail" maxlength="60"
 								       placeholder="E-mail"
 								       title="Ops, o campo deve ser preenchido corretamente :)"
 								       x-moz-errormessage="Ops, o campo deve ser preenchido corretamente :)"/>
@@ -1049,7 +1049,7 @@
 							</div>
 
 							<div class="ContactForm-field ContactForm-field--address">
-								<input class="phone-text" type="text" size="26" name="tAddress" required="required" id="cAddress" maxlength="50"
+								<input class="phone-text" type="text" size="26" name="tAddress" id="cAddress" maxlength="50"
 								       placeholder="Endereço Completo"
 								       title="Ops, o campo deve ser preenchido corretamente :)"
 								       x-moz-errormessage="Ops, o campo deve ser preenchido corretamente :)"/>
@@ -1057,7 +1057,7 @@
 							</div>
 
 							<div class="ContactForm-field ContactForm-field--address">
-								<input class="phone-text" type="text" size="26" name="tCity" required="required" id="cCity" maxlength="25"
+								<input class="phone-text" type="text" size="26" name="tCity" id="cCity" maxlength="25"
 								       placeholder="Cidade"
 								       title="Ops, o campo cidade deve ser preenchido corretamente :)"
 								       x-moz-errormessage="Ops, o campo cidade deve ser preenchido corretamente :)"/>
@@ -1069,11 +1069,11 @@
 						<div class="ContactForm-wrapper ContactForm-wrapper--personal-info flex flex-column">
 
 							<div class="ContactForm-field ContactForm-field--message">
-						<textarea class="lato" name="tMensagem" required="required" id="cMensagem" cols="36"
-						          placeholder="Digite a sua mensagem"
-						          title="Ops, o campo mensagem deve ser preenchido corretamente :)"
-						          x-moz-errormessage="Ops, o campo mensagem deve ser preenchido corretamente :)"></textarea>
-								<label class="text-message" for="cMensagem">Mensagem</label>
+								<textarea class="lato" name="tMensagem" id="cMessage" cols="36"
+									placeholder="Digite a sua mensagem"
+									title="Ops, o campo mensagem deve ser preenchido corretamente :)"
+									x-moz-errormessage="Ops, o campo mensagem deve ser preenchido corretamente :)"></textarea>
+								<label class="text-message" for="cMessage">Mensagem</label>
 							</div>
 
 							<div class="ContactForm-field ContactForm-field--submit flex align-end">
@@ -1268,11 +1268,14 @@
 
 			var lat = parseFloat(this.dataset.maplat) || false;
 			var lng = parseFloat(this.dataset.maplng) || false;
+			var zoom = parseFloat(this.dataset.mapzoom) || false;
+
+			console.log(zoom);
 
 			if (lat && lng)
 				map.setCenter(new google.maps.LatLng({lat: lat, lng: lng}));
 
-			map.setZoom(16);
+			map.setZoom(!!zoom ? zoom: 16);
 
 		});
 
@@ -1464,6 +1467,61 @@
 
 	var contactMethods = new ContactMethods(document.getElementById('contact-methods'));
 	contactMethods.init();
+
+</script>
+
+<script>
+
+	var form = {
+		viewport: document.getElementById('cForm')
+	};
+
+	form.fields = {};
+	form.sendButton = {};
+
+	form.fields.cName = document.getElementById('cName');
+	form.fields.cPhone = document.getElementById('cPhone');
+	form.fields.cEmail = document.getElementById('cEmail');
+	form.fields.cAddress = document.getElementById('cAddress');
+	form.fields.cCity = document.getElementById('cCity');
+	form.fields.cMessage = document.getElementById('cMessage');
+
+	form.sendButton.viewport = document.getElementById('cSubmit');
+
+	form.sendButton.viewport.addEventListener('click', function (ev) {
+
+		ev.preventDefault();
+
+		var allow = !!(form.fields.cName.value && (form.fields.cPhone.value || form.fields.cEmail.value) && (form.fields.cAddress.value || form.fields.cCity.value) && form.fields.cMessage.value);
+
+		if (allow) {
+
+			var requestData = {
+				cName: form.fields.cName.value,
+				cPhone: form.fields.cPhone.value,
+				cEmail: form.fields.cEmail.value,
+				cAddress: form.fields.cAddress.value,
+				cCity: form.fields.cCity.value,
+				cMessage: form.fields.cMessage.value
+			};
+
+			console.log(requestData);
+
+			$.ajax({
+				cache: false,
+				data: requestData,
+				method: 'get',
+				success: function (data) {
+
+					console.log(data);
+
+				},
+				url: 'http://mailman.letsmowe.com/oai/'
+			});
+
+		}
+
+	})
 
 </script>
 
