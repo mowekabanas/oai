@@ -88,7 +88,7 @@ gulp.task('resizeLargePhotos', function () {
 });
 
 gulp.task('tinyImages', function () {
-	gulp.src(images.location + images.content)
+	gulp.src(images.location + 'src/' + images.content)
 		.pipe(tinypng(tinypngToken))
 		.pipe(gulp.dest(images.location));
 });
