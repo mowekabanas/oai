@@ -32,53 +32,61 @@
 
 </script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>-->
 <script type="text/javascript">
-	var map;
-	var centerPos = new google.maps.LatLng(-22.609642,-50.4577229);
-	var zoomLevel = 10;
-	function initialize() {
-		var mapOptions = {
-			center: centerPos,
-			disableDefaultUI: true,
-			scrollwheel: false,
-			zoom: zoomLevel,
-			zoomControl: true
-		};
 
-		map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
+	function buildMap() {
 
-		var locations = [
-			['assis', -22.6618791,-50.4175902],
+		var map;
+		var centerPos = new google.maps.LatLng(-22.609642,-50.4577229);
+		var zoomLevel = 10;
+		function initialize() {
+			var mapOptions = {
+				center: centerPos,
+				disableDefaultUI: true,
+				scrollwheel: false,
+				zoom: zoomLevel,
+				zoomControl: true
+			};
+
+			map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
+
+			var locations = [
+				['assis', -22.6618791,-50.4175902],
 //			['cnp', -22.6074217,-50.0168386],
 //			['cmota', -22.7444256,-50.4203003],
-			['echapora', -22.429305,-50.2045585],
-			['ibirarema', -22.8148214,-50.0745476],
-			['nsparecida', -22.9652546,-50.2681337],
-			['nalexandria', -22.6979809,-50.2918808],
-			['obressane', -22.3164616,-50.2831488],
-			['palmital', -22.7858947,-50.2232455],
-			['platina', -22.6338278,-50.2050002]
-		];
+				['echapora', -22.429305,-50.2045585],
+				['ibirarema', -22.8148214,-50.0745476],
+				['nsparecida', -22.9652546,-50.2681337],
+				['nalexandria', -22.6979809,-50.2918808],
+				['obressane', -22.3164616,-50.2831488],
+				['palmital', -22.7858947,-50.2232455],
+				['platina', -22.6338278,-50.2050002]
+			];
 
-		var image = 'img/icon.png';
+			var image = 'img/icon.png';
 
-		var markers = [];
+			var markers = [];
 
-		for (i = locations.length; i--; )
-			markers.push(new google.maps.Marker({
-				icon: image,
-				map: map,
-				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-				title: locations[i][0]
-			}));
+			for (i = locations.length; i--; )
+				markers.push(new google.maps.Marker({
+					icon: image,
+					map: map,
+					position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+					title: locations[i][0]
+				}));
 
-		var style = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f5f5f5"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#03a9f4"},{"visibility":"on"}]}];
+			var style = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f5f5f5"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#03a9f4"},{"visibility":"on"}]}];
 
-		map.setOptions({styles: style});
+			map.setOptions({styles: style});
 
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+	};
+
+//	buildMap();
 
 </script>
 
@@ -833,7 +841,7 @@
 
 		<div class="ContactMethodsContent">
 
-			<div id="contact-method-phone" class="ContactMethods-item ContactMethods-item--phone is-active">
+			<div id="contact-method-phone" class="ContactMethods-item ContactMethods-item--phone is-actie">
 
 				<div class="ContactPhone">
 
@@ -1014,13 +1022,13 @@
 
 			</div>
 
-			<div id="contact-method-message" class="ContactMethods-item ContactMethods-item--message">
+			<div id="contact-method-message" class="ContactMethods-item ContactMethods-item--message is-active">
 
 				<div class="container flex flex-column align-center">
 
 					<h3>Enviar uma mensagem:</h3>
 
-					<form id="contact-form" class="ContactForm flex flex-column">
+					<form id="cForm" class="ContactForm flex flex-column">
 
 						<div class="ContactForm-wrapper ContactForm-wrapper--personal-info flex flex-column">
 
@@ -1076,8 +1084,26 @@
 								<label class="text-message" for="cMessage">Mensagem</label>
 							</div>
 
-							<div class="ContactForm-field ContactForm-field--submit flex align-end">
-								<input id="cSubmit" class="ContactForm-submit" name="ir" type="submit" value="Enviar"/>
+							<div class="ContactFormFooter">
+
+								<div class="ContactFormStatus">
+
+									<span class="ContactFormStatus-text ContactFormStatus-text--sending font-light-blue-a700">Enviando...</span>
+
+									<span class="ContactFormStatus-text ContactFormStatus-text--success font-light-green-a700">Enviado com sucesso!</span>
+
+									<span class="ContactFormStatus-text ContactFormStatus-text--error font-red-a700">Não foi possível enviar, verifique os campos e tente novamente</span>
+
+									<span class="ContactFormStatus-text ContactFormStatus-text--fail font-red-a700">Houve algum problema, tentando novamente...</span>
+
+								</div>
+
+								<div class="ContactForm-field ContactForm-field--submit">
+
+									<input id="cSubmit" class="ContactForm-submit red-400" name="ir" type="submit" value="Enviar"/>
+
+								</div>
+
 							</div>
 
 						</div>
@@ -1472,6 +1498,13 @@
 
 <script>
 
+	var formSentCount = 0;
+	var formSentCountLimit = 2;
+
+	var requestURL = 'http://mailman.letsmowe.com/oai/';
+
+	var formLocked = false;
+
 	var form = {
 		viewport: document.getElementById('cForm')
 	};
@@ -1488,40 +1521,138 @@
 
 	form.sendButton.viewport = document.getElementById('cSubmit');
 
-	form.sendButton.viewport.addEventListener('click', function (ev) {
+	form.states = [
+		'is-error',
+		'is-fail',
+		'is-sending',
+		'is-success'
+	];
 
-		ev.preventDefault();
+	form.changeState = function (state) {
 
-		var allow = !!(form.fields.cName.value && (form.fields.cPhone.value || form.fields.cEmail.value) && (form.fields.cAddress.value || form.fields.cCity.value) && form.fields.cMessage.value);
+		if (form.viewport) {
 
-		if (allow) {
+			for (var i = form.states.length; i--; )
+				form.viewport.classList.remove(form.states[i])
 
-			var requestData = {
-				cName: form.fields.cName.value,
-				cPhone: form.fields.cPhone.value,
-				cEmail: form.fields.cEmail.value,
-				cAddress: form.fields.cAddress.value,
-				cCity: form.fields.cCity.value,
-				cMessage: form.fields.cMessage.value
-			};
+			form.viewport.classList.add(state);
 
-			console.log(requestData);
+		}
 
+	};
+
+	// send the ajax request
+	form.sendRequest = function(requestData) {
+
+		if (requestData) {
+
+			// ajax request
 			$.ajax({
 				cache: false,
+				crossDomain: true,
 				data: requestData,
 				method: 'get',
+				beforeSend: function() {
+
+					formLocked = true;
+					form.changeState('is-sending');
+
+				},
+				error: function (data) {
+
+					console.log(data);
+
+					form.changeState('is-fail');
+					form.send(requestData, 5000);
+
+				},
 				success: function (data) {
 
 					console.log(data);
 
+					if (data.sent)
+						form.changeState('is-success');
+					else
+						form.changeState('is-error');
+
+					formLocked = false;
+
 				},
-				url: 'http://mailman.letsmowe.com/oai/'
+				timeout: 12000,
+				url: requestURL
 			});
 
 		}
 
-	})
+	};
+
+	// control the time delay to init the ajax request
+	form.send = function(requestData, delay) {
+
+		if (requestData) {
+
+			if (delay) {
+
+				setTimeout(function() {
+
+					form.sendRequest(requestData);
+
+				}, delay)
+
+			} else {
+
+			form.sendRequest(requestData);
+
+			}
+
+		}
+
+	};
+
+	// form submit button listener
+	form.sendButton.viewport.addEventListener('click', function (ev) {
+
+		ev.preventDefault();
+
+		if (!formLocked) {
+
+			if (formSentCount < formSentCountLimit) {
+
+				var allow = !!(form.fields.cName.value && (form.fields.cPhone.value || form.fields.cEmail.value) && (form.fields.cAddress.value || form.fields.cCity.value) && form.fields.cMessage.value);
+
+				if (allow) {
+
+					// lock the form
+					formLocked = true;
+
+					// count the request
+					formSentCount++;
+
+					// get object data
+					var requestData = {
+						cName: form.fields.cName.value,
+						cPhone: form.fields.cPhone.value,
+						cEmail: form.fields.cEmail.value,
+						cAddress: form.fields.cAddress.value,
+						cCity: form.fields.cCity.value,
+						cMessage: form.fields.cMessage.value
+					};
+
+					// send
+					form.send(requestData, false);
+
+
+				} else {
+
+					form.changeState('is-error');
+
+				}
+
+			}
+
+		}
+
+	});
 
 </script>
 

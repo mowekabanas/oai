@@ -52,6 +52,12 @@ gulp.task('oai', function() {
 	gulp.src(cssfiles)
 		.pipe(concat('oai.css'))
 		.pipe(gulp.dest('dist/css'));
+	gulp.src('dist/css/oai.css')
+		.pipe(minifycss())
+		.pipe(rename({
+			extname: '.min.css'
+		}))
+		.pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('minifyCss', function () {
