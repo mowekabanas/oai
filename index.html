@@ -35,11 +35,12 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script type="text/javascript">
 
+	var map;
+	var zoomLevel = 10;
+
 	function buildMap() {
 
-		var map;
 		var centerPos = new google.maps.LatLng(-22.609642,-50.4577229);
-		var zoomLevel = 10;
 		function initialize() {
 			var mapOptions = {
 				center: centerPos,
@@ -1295,8 +1296,6 @@
 			var lat = parseFloat(this.dataset.maplat) || false;
 			var lng = parseFloat(this.dataset.maplng) || false;
 			var zoom = parseFloat(this.dataset.mapzoom) || false;
-
-			console.log(zoom);
 
 			if (lat && lng)
 				map.setCenter(new google.maps.LatLng({lat: lat, lng: lng}));
