@@ -711,7 +711,6 @@
 /* Contact Methods Content */
 
 .ContactMethodsContent {
-  height: 36em;
   margin: 0 0 3em;
   max-width: 60em;
   position: relative;
@@ -725,7 +724,7 @@
   height: 100%;
   left: 0;
   overflow-y: auto;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
 }
